@@ -1,0 +1,9 @@
+.vimrc.local
+.netrwhist
+*.pyc
+.ropeproject
+session.vim
+bundle
+swp
+bkp
+undo
