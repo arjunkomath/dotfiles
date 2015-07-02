@@ -1,8 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-source ~/.vim/.vimrc.sanity
-
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set rtp+=~/.vim/bundle/nerdtree.vim
 
@@ -22,6 +20,10 @@ Bundle 'StanAngeloff/php.vim'
 Bundle 'ntpeters/vim-better-whitespace'
 Plugin 'bling/vim-airline'
 Plugin 'Yggdroot/indentLine'
+Plugin 'docunext/closetag.vim'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
