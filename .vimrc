@@ -44,10 +44,6 @@ nnoremap <F2> :set invpaste paste?<CR>
 "fuggitive mapping
 nnoremap gs :Gstatus<CR>
 nnoremap gd :Gdiff<CR>
-nnoremap ga :Gwrite<CR>
-nnoremap gc :Gcommit<CR>
-nnoremap gph :Gpush<CR>
-nnoremap gpl :Gfetch<CR>
 
 map <c-w> :q!<CR>
 set pastetoggle=<F2>
