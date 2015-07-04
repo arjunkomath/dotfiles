@@ -23,7 +23,7 @@ Plugin 'docunext/closetag.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
-
+Plugin 'elzr/vim-json'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -40,6 +40,16 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 nnoremap <F2> :set invpaste paste?<CR>
+
+"fuggitive mapping
+nnoremap gs :Gstatus<CR>
+nnoremap gd :Gdiff<CR>
+nnoremap ga :Gwrite<CR>
+nnoremap gc :Gcommit<CR>
+nnoremap gph :Gpush<CR>
+nnoremap gpl :Gfetch<CR>
+
+map <c-w> :q!<CR>
 set pastetoggle=<F2>
 set showmode
 
@@ -61,7 +71,7 @@ set list lcs=tab:\|\
 
 syntax on
 set autoindent
-set tw=4
+set tw=79
 syntax on                     " syntax highlighing
 filetype on                   " try to detect filetypes
 set tabstop=4               " <tab> inserts 4 spaces 
@@ -80,7 +90,6 @@ au FileType gitcommit set tw=72
 set autoread                  " watch for file changes
 set showmatch           " Show matching brackets.
 set incsearch           " Incremental search
-set autoread                  " watch for file changes
 set autoindent smartindent    " auto/smart indent
 set history=200
 set cmdheight=1
@@ -88,8 +97,8 @@ set cmdheight=1
 set backup
 set backupdir=~/.vim/bkp
 set laststatus=2            " Always show statusline, even if only 1 window.
-set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ }
 set conceallevel=0
+let g:vim_json_syntax_conceal = 0
 
 function! PhpSyntaxOverride()
       hi! def link phpDocTags  phpDefine
