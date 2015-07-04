@@ -89,6 +89,7 @@ set backup
 set backupdir=~/.vim/bkp
 set laststatus=2            " Always show statusline, even if only 1 window.
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ }
+set conceallevel=0
 
 function! PhpSyntaxOverride()
       hi! def link phpDocTags  phpDefine
