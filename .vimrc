@@ -100,3 +100,8 @@ function! PhpSyntaxOverride()
           autocmd!
             autocmd FileType php call PhpSyntaxOverride()
         augroup END
+
+augroup reload_vimrc " {
+		    autocmd!
+			    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+		augroup END " }
