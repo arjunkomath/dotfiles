@@ -15,7 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 " source ~/.vim/.vimrc.bundles
 " Line numbers
 Bundle "myusuf3/numbers.vim"
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'ntpeters/vim-better-whitespace'
 Plugin 'bling/vim-airline'
