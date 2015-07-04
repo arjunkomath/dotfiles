@@ -15,7 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 " source ~/.vim/.vimrc.bundles
 " Line numbers
 Bundle "myusuf3/numbers.vim"
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'ntpeters/vim-better-whitespace'
 Plugin 'bling/vim-airline'
@@ -63,6 +63,22 @@ set list lcs=tab:\|\
 syntax on
 set autoindent
 set tw=4
+syntax on                     " syntax highlighing
+filetype on                   " try to detect filetypes
+set tabstop=4               " <tab> inserts 4 spaces 
+set matchpairs+=<:>         " show matching <> (html mainly) as well
+set number                  " Display line numbers
+set nopaste
+set backspace=indent,eol,start
+set hlsearch                " Highlight searches by default.
+set cursorline
+set cursorcolumn
+set noeb
+set novb
+au FileType gitcommit set tw=72
+
+set laststatus=2            " Always show statusline, even if only 1 window.
+set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ }
 
 function! PhpSyntaxOverride()
       hi! def link phpDocTags  phpDefine
