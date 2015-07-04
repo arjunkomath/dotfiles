@@ -12,7 +12,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-" source ~/.vim/.vimrc.bundles
 " Line numbers
 Bundle "myusuf3/numbers.vim"
 Bundle 'Valloric/YouCompleteMe'
@@ -75,8 +74,19 @@ set cursorline
 set cursorcolumn
 set noeb
 set novb
+set ruler
 au FileType gitcommit set tw=72
 
+set autoread                  " watch for file changes
+set showmatch           " Show matching brackets.
+set incsearch           " Incremental search
+set autoread                  " watch for file changes
+set autoindent smartindent    " auto/smart indent
+set history=200
+set cmdheight=1
+"Backup
+set backup
+set backupdir=~/.vim/bkp
 set laststatus=2            " Always show statusline, even if only 1 window.
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ }
 
