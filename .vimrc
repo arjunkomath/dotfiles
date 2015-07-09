@@ -24,6 +24,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'elzr/vim-json'
+Plugin 'spf13/PIV'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -45,7 +46,6 @@ nnoremap <F2> :set invpaste paste?<CR>
 nnoremap gs :Gstatus<CR>
 nnoremap gd :Gdiff<CR>
 
-map <c-w> :q!<CR>
 set pastetoggle=<F2>
 set showmode
 
@@ -94,7 +94,13 @@ set backup
 set backupdir=~/.vim/bkp
 set laststatus=2            " Always show statusline, even if only 1 window.
 set conceallevel=0
+" size of an "indent"
+set shiftwidth=4
+set nowrap
 let g:vim_json_syntax_conceal = 0
+set mouse=a
+
+autocmd CompleteDone * pclose
 
 function! PhpSyntaxOverride()
       hi! def link phpDocTags  phpDefine
