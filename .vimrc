@@ -16,15 +16,19 @@ Plugin 'gmarik/Vundle.vim'
 Bundle "myusuf3/numbers.vim"
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'StanAngeloff/php.vim'
-Bundle 'ntpeters/vim-better-whitespace'
+"Bundle 'ntpeters/vim-better-whitespace'
 Plugin 'bling/vim-airline'
-Plugin 'Yggdroot/indentLine'
+"Plugin 'Yggdroot/indentLine'
 Plugin 'docunext/closetag.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'elzr/vim-json'
 Plugin 'spf13/PIV'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -99,6 +103,7 @@ set shiftwidth=4
 set nowrap
 let g:vim_json_syntax_conceal = 0
 set mouse=a
+
 
 autocmd CompleteDone * pclose
 
