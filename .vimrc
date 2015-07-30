@@ -24,7 +24,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'elzr/vim-json'
-Plugin 'spf13/PIV'
+"Plugin 'spf13/PIV'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
