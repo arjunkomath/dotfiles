@@ -12,12 +12,13 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'flazz/vim-colorschemes'
 " Line numbers
 Bundle "myusuf3/numbers.vim"
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'StanAngeloff/php.vim'
 "Bundle 'ntpeters/vim-better-whitespace'
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
 "Plugin 'Yggdroot/indentLine'
 Plugin 'docunext/closetag.vim'
 Plugin 'tpope/vim-unimpaired'
@@ -26,12 +27,18 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'elzr/vim-json'
 "Plugin 'spf13/PIV'
 Plugin 'kien/ctrlp.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'rking/ag.vim'
+Bundle 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+filetype indent on
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -57,24 +64,20 @@ set showmode
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
-"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
-" set your own custom ignore settings
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
-    \ 'file': '\.DS_Store$\|\.so$\|\.dll$\|\.pyc$' }
-
-set list lcs=tab:\|\ 
+"let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 syntax on
 set autoindent
 set tw=79
 syntax on                     " syntax highlighing
 filetype on                   " try to detect filetypes
-set tabstop=4               " <tab> inserts 4 spaces 
+
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 set matchpairs+=<:>         " show matching <> (html mainly) as well
 set number                  " Display line numbers
 set nopaste
@@ -102,22 +105,28 @@ set conceallevel=0
 set shiftwidth=4
 set nowrap
 let g:vim_json_syntax_conceal = 0
-set mouse=a
+"set mouse=a
 
+set ts=4 sw=4 et
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=8
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=8
+"autocmd VimEnter,Colorscheme * :IndentGuidesEnable 
 
 autocmd CompleteDone * pclose
 
-function! PhpSyntaxOverride()
-      hi! def link phpDocTags  phpDefine
-        hi! def link phpDocParam phpType
-    endfunction
-
-    augroup phpSyntaxOverride
-          autocmd!
-            autocmd FileType php call PhpSyntaxOverride()
-        augroup END
-
 augroup reload_vimrc " {
-		    autocmd!
-			    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-		augroup END " }
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
