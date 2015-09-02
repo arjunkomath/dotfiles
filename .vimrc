@@ -34,6 +34,9 @@ Plugin 'rking/ag.vim'
 Bundle 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'PDV--phpDocumentor-for-Vim'
+Plugin 'Raimondi/delimitMate'
+Plugin '2072/PHP-Indenting-for-VIm'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,10 +55,6 @@ filetype indent on
 " Put your non-Plugin stuff after this line
 
 nnoremap <F2> :set invpaste paste?<CR>
-
-"fuggitive mapping
-nnoremap gs :Gstatus<CR>
-nnoremap gd :Gdiff<CR>
 
 set pastetoggle=<F2>
 set showmode
@@ -130,3 +129,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+autocmd FileType php inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
+autocmd FileType php nnoremap <C-D> :call PhpDocSingle()<CR>
+autocmd FileType php vnoremap <C-D> :call PhpDocRange()<CR>
