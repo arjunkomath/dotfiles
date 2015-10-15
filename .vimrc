@@ -37,6 +37,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'PDV--phpDocumentor-for-Vim'
 Plugin 'Raimondi/delimitMate'
 Plugin '2072/PHP-Indenting-for-VIm'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'pangloss/vim-javascript'
+Plugin 'easymotion/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
