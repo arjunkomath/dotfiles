@@ -38,6 +38,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'pangloss/vim-javascript'
+Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -106,6 +107,7 @@ set shiftwidth=4
 set nowrap
 let g:vim_json_syntax_conceal = 0
 "set mouse=a
+set noet ci pi sts=0 sw=4 ts=4
 
 set ts=4 sw=4 et
 let g:indent_guides_start_level=2
