@@ -24,7 +24,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'elzr/vim-json'
 "Plugin 'spf13/PIV'
 Plugin 'kien/ctrlp.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/nerdtree'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'rking/ag.vim'
