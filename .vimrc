@@ -28,7 +28,7 @@ Plugin 'scrooloose/nerdtree'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'rking/ag.vim'
 Bundle 'mattn/webapi-vim'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'PDV--phpDocumentor-for-Vim'
 Plugin 'Raimondi/delimitMate'
 Plugin '2072/PHP-Indenting-for-VIm'
@@ -133,3 +133,23 @@ let g:syntastic_check_on_wq = 0
 autocmd FileType php inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
 autocmd FileType php nnoremap <C-D> :call PhpDocSingle()<CR>
 autocmd FileType php vnoremap <C-D> :call PhpDocRange()<CR>
+
+" Window movement shortcuts
+" move to the window in the direction shown, or create a new window
+function! WinMove(key)
+    let t:curwin = winnr()
+    exec "wincmd ".a:key
+    if (t:curwin == winnr())
+        if (match(a:key,'[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        exec "wincmd ".a:key
+    endif
+endfunction
+
+map <silent> <C-h> :call WinMove('h')<cr>
+map <silent> <C-j> :call WinMove('j')<cr>
+map <silent> <C-k> :call WinMove('k')<cr>
+map <silent> <C-l> :call WinMove('l')<cr>
