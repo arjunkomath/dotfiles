@@ -1,158 +1,129 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"Plug-ins
+call plug#begin('~/.config/nvim/plugged')
+" Tools
+    Plug 'junegunn/goyo.vim'
+    Plug 'vifm/vifm.vim'
+    Plug 'junegunn/limelight.vim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'preservim/nerdtree'
+    Plug 'preservim/nerdcommenter'
+    " post install (yarn install | npm install) then load plugin only for editing supported files
+    Plug 'prettier/vim-prettier', {
+      \ 'do': 'yarn install',
+      \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+" Syntax
+    Plug 'tpope/vim-markdown'
+    Plug 'ap/vim-css-color' "Displays a preview of colors with CSS 
+    Plug 'vim-scripts/fountain.vim'
+" Color-schemes
+    Plug 'morhetz/gruvbox' "My favorite theme
+call plug#end() 
+ 
+"General Settings
+set encoding=UTF-8
+filetype plugin indent on  "Enabling Plugin & Indent
+syntax on  "Turning Syntax on
+set autoread wildmode=longest,list,full
+set spell spelllang=en_us
+set backspace=indent,eol,start confirm
+set shiftwidth=4 autoindent smartindent tabstop=4 softtabstop=4 expandtab  
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+set hls is ic
+set laststatus=2 cmdheight=1
+au BufRead,BufNewFile *.fountain set filetype=fountain
+set splitbelow splitright 
+set nobackup nowritebackup nocursorline
+set relativenumber
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-set rtp+=~/.vim/bundle/nerdtree.vim
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'flazz/vim-colorschemes'
-" Line numbers
-Bundle "myusuf3/numbers.vim"
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'StanAngeloff/php.vim'
-Plugin 'docunext/closetag.vim'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'elzr/vim-json'
-"Plugin 'spf13/PIV'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'rking/ag.vim'
-Bundle 'mattn/webapi-vim'
-"Plugin 'scrooloose/syntastic'
-Plugin 'PDV--phpDocumentor-for-Vim'
-Plugin 'Raimondi/delimitMate'
-Plugin '2072/PHP-Indenting-for-VIm'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'pangloss/vim-javascript'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'mxw/vim-jsx'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-filetype indent on
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-nnoremap <F2> :set invpaste paste?<CR>
-
-set pastetoggle=<F2>
-set showmode
+"Status-line
+set statusline=
+set statusline+=%#IncSearch#
+set statusline+=\ %y
+set statusline+=\ %r
+set statusline+=%#CursorLineNr#
+set statusline+=\ %F
+set statusline+=%= "Right side settings
+set statusline+=%#Search#
+set statusline+=\ %l/%L
+set statusline+=\ [%c]
 
 "CtrlP Settings
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-"let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|build)|(\.(swp|ico|git|svn))$'
 
-syntax on
-set autoindent
-set tw=79
-syntax on                     " syntax highlighing
-filetype on                   " try to detect filetypes
+"Key-bindings
+let mapleader=" "
+nnoremap <leader>n :Explore<CR>
+nnoremap <leader><Space> :CtrlP<CR>
+nnoremap <leader><ENTER> :Goyo<CR>
+nnoremap <leader>, :vsplit ~/.config/nvim/init.vim<CR>
+nnoremap <leader>g :GitGutterDisable <BAR> :set laststatus=0 <CR>
+nnoremap <C-g> :set spelllang=de_de<CR>
+nnoremap <C-l> :set background=light<CR>
+nnoremap <C-s> :source ~/.config/nvim/init.vim<CR>
 
-filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
-set expandtab
+"Resize panes
+nnoremap <Up> :resize +2<CR> 
+nnoremap <Down> :resize -2<CR>
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
 
-set matchpairs+=<:>         " show matching <> (html mainly) as well
-set number                  " Display line numbers
-set nopaste
-set backspace=indent,eol,start
-set hlsearch                " Highlight searches by default.
-set cursorline
-set cursorcolumn
-set noeb
-set novb
-set ruler
-au FileType gitcommit set tw=72
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
 
-set autoread                  " watch for file changes
-set showmatch           " Show matching brackets.
-set incsearch           " Incremental search
-set autoindent smartindent    " auto/smart indent
-set history=200
-set cmdheight=1
-"Backup
-set backup
-set backupdir=~/.vim/bkp
-set laststatus=2            " Always show statusline, even if only 1 window.
-set conceallevel=0
-" size of an "indent"
-set shiftwidth=4
-set nowrap
-let g:vim_json_syntax_conceal = 0
-"set mouse=a
-set noet ci pi sts=0 sw=4 ts=4
+nnoremap Q <nop>
 
-set ts=4 sw=4 et
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=8
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=8
-"autocmd VimEnter,Colorscheme * :IndentGuidesEnable 
+"Navigate panes
+nnoremap <leader>h <C-W>h
+nnoremap <leader>j <C-W>j
+nnoremap <leader>k <C-W>k
+nnoremap <leader>l <C-W>l
+nnoremap <C-w> :q<CR>
 
-autocmd CompleteDone * pclose
+"Color Settings
+colorscheme gruvbox
+set background=dark cursorline
+hi clear CursorLine
+set termguicolors
 
-augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
+hi! Normal ctermbg=NONE guibg=NONE 
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-autocmd FileType php inoremap <C-D> <ESC>:call PhpDocSingle()<CR>i
-autocmd FileType php nnoremap <C-D> :call PhpDocSingle()<CR>
-autocmd FileType php vnoremap <C-D> :call PhpDocRange()<CR>
-
-" Window movement shortcuts
-" move to the window in the direction shown, or create a new window
-function! WinMove(key)
-    let t:curwin = winnr()
-    exec "wincmd ".a:key
-    if (t:curwin == winnr())
-        if (match(a:key,'[jk]'))
-            wincmd v
-        else
-            wincmd s
-        endif
-        exec "wincmd ".a:key
-    endif
+"Goyo settings
+function! s:goyo_enter()
+    set noshowmode noshowcmd
+    CocDisable
+    Limelight
 endfunction
 
-map <silent> <C-h> :call WinMove('h')<cr>
-map <silent> <C-j> :call WinMove('j')<cr>
-map <silent> <C-k> :call WinMove('k')<cr>
-map <silent> <C-l> :call WinMove('l')<cr>
+function! s:goyo_leave()
+    set showmode showcmd nocursorline
+    doautocmd Syntax
+    hi! Normal ctermbg=NONE guibg=NONE
+    CocEnable
+    Limelight!
+endfunction
 
-" copy to mac clipboard
-set clipboard=unnamed
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" coc config
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ ]
