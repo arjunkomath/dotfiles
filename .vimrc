@@ -5,9 +5,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vifm/vifm.vim'
     Plug 'junegunn/limelight.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'ctrlpvim/ctrlp.vim'
     Plug 'preservim/nerdtree'
     Plug 'preservim/nerdcommenter'
+    Plug '/usr/local/opt/fzf'
     " post install (yarn install | npm install) then load plugin only for editing supported files
     Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install',
@@ -17,7 +17,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'ap/vim-css-color' "Displays a preview of colors with CSS 
     Plug 'vim-scripts/fountain.vim'
 " Color-schemes
-    Plug 'morhetz/gruvbox' "My favorite theme
+    Plug 'arzg/vim-colors-xcode'
 call plug#end() 
  
 "General Settings
@@ -48,19 +48,17 @@ set statusline+=%#Search#
 set statusline+=\ %l/%L
 set statusline+=\ [%c]
 
-"CtrlP Settings
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|build)|(\.(swp|ico|git|svn))$'
-
 "Key-bindings
 let mapleader=" "
 nnoremap <leader>n :Explore<CR>
-nnoremap <leader><Space> :CtrlP<CR>
 nnoremap <leader><ENTER> :Goyo<CR>
 nnoremap <leader>, :vsplit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>g :GitGutterDisable <BAR> :set laststatus=0 <CR>
-nnoremap <C-g> :set spelllang=de_de<CR>
-nnoremap <C-l> :set background=light<CR>
 nnoremap <C-s> :source ~/.config/nvim/init.vim<CR>
+
+"Search
+nnoremap <leader><Space> :FZF<CR>
+nmap <C-P> :FZF<CR>
 
 "Resize panes
 nnoremap <Up> :resize +2<CR> 
@@ -81,10 +79,8 @@ nnoremap <leader>l <C-W>l
 nnoremap <C-w> :q<CR>
 
 "Color Settings
-colorscheme gruvbox
+colorscheme xcodedark
 set background=dark cursorline
-hi clear CursorLine
-set termguicolors
 
 hi! Normal ctermbg=NONE guibg=NONE 
 hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
@@ -117,6 +113,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> go :CocAction<CR>
 
 " coc config
 let g:coc_global_extensions = [
