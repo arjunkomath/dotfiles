@@ -4,10 +4,6 @@
 
 - clean: ['~']
 
-- link:
-    ~/.config:
-    ~/.zshrc:
-
 - create:
     - ~/Developer
 - create:
@@ -17,6 +13,13 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Installing ohmyzsh]
+  - [chsh -s $(which zsh), Making zsh the default shell]
+
+- link:
+    ~/.config:
+    ~/.zshrc:
+
+- shell:
   - [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)", Installing homebrew]
   - [curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash, Installing NVM]
   - [brew install --cask visual-studio-code, Installing VSCode]

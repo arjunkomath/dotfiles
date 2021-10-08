@@ -1,12 +1,6 @@
-# Dotfiles
+# Dotfiles [![CI](https://github.com/arjunkomath/dotfiles/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/arjunkomath/dotfiles/actions/workflows/build.yml)
 
 After cloning this repo, run `install` to automatically set up the development environment. Note that the install script is idempotent: it can safely be run multiple times.
-
-## IDE Setup
-- iTerm
-- Neovim
-- Zsh
-- Tmux
 
 ![Screen Shot 2021-06-02 at 10 12 58 pm](https://user-images.githubusercontent.com/2555067/120477967-b23eeb00-c3ef-11eb-806c-6f091b9ff5a0.png)
 
