@@ -11,9 +11,10 @@
     ~/.zshrc:
 
 - create:
+    - ~/Developer
+- create:
     ~/.ssh:
       mode: 0700
-    - ~/Developer
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
