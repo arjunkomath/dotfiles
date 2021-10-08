@@ -38,3 +38,6 @@ npm i -g yarn
 
 installing "vscode"
 brew install --cask visual-studio-code
+
+installing "iterm"
+brew install --cask iterm2
