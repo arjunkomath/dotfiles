@@ -5,9 +5,7 @@
 - clean: ['~']
 
 - link:
-    ~/.config/:
-      glob: true
-      path: config/**
+    ~/.config:
     ~/.zshrc:
 
 - create:
@@ -18,6 +16,9 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)", Installing homebrew]
   - [sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Installing ohmyzsh]
+  - [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)", Installing homebrew]
+  - [brew install fzf, Installing fzf]
   - [curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash, Installing NVM]
+  - [brew install --cask visual-studio-code, Installing VSCode]
+  - [brew install --cask iterm2, Installing iTerm]
