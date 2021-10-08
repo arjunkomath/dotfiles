@@ -1,10 +1,6 @@
-## Machine Setup
+# Dotfiles
 
-Run
-```sh
-chmod +x setup.sh
-./setup.sh
-```
+After cloning this repo, run `install` to automatically set up the development environment. Note that the install script is idempotent: it can safely be run multiple times.
 
 ## IDE Setup
 - iTerm
