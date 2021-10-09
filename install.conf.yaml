@@ -3,6 +3,9 @@
       relink: true
 
 - clean: ["~"]
+- clean:
+    ~/.config:
+      recursive: true
 
 - create:
     - ~/Developer
@@ -27,7 +30,9 @@
       ]
 
 - link:
-    ~/.config:
+    ~/.config/nvim:
+      path: config/nvim
+      relink: true
     ~/.zshrc:
       force: true
 
