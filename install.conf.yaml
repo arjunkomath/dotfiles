@@ -9,6 +9,7 @@
 
 - create:
     - ~/Developer
+    - ~/.config
 - create:
     ~/.ssh:
       mode: 0700
