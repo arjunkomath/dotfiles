@@ -3,7 +3,7 @@ tap "homebrew/cask"
 
 # Libs / Utils
 brew "fzf"
-brew "gh"
+brew "fd"
 brew "neovim"
 brew "python@3.8"
 brew "redis"
