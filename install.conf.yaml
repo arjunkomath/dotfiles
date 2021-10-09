@@ -2,7 +2,7 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - create:
     - ~/Developer
@@ -11,12 +11,19 @@
       mode: 0700
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)", Installing ohmyzsh]
+    - [git submodule update --init --recursive, Installing submodules]
+    - [
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)",
+        Installing ohmyzsh,
+      ]
 
 - shell:
-  - [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)", Installing homebrew]
-#   - [brew install neovim, Installing neovim]
+    - [
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)",
+        Installing homebrew,
+      ]
+    - [brew install neovim, Installing neovim]
+    - [brew install fzf, Installing fzf]
 
 - link:
     ~/.config:
@@ -24,6 +31,9 @@
       force: true
 
 - shell:
-  - [curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash, Installing NVM]
-  - [brew install --cask visual-studio-code, Installing VSCode]
-  - [brew install --cask iterm2, Installing iTerm]
+    - [
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash,
+        Installing NVM,
+      ]
+    - [brew install --cask visual-studio-code, Installing VSCode]
+    - [brew install --cask iterm2, Installing iTerm]
