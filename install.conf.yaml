@@ -22,8 +22,7 @@
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)",
         Installing homebrew,
       ]
-    - [brew install neovim, Installing neovim]
-    - [brew install fzf, Installing fzf]
+    - [brew bundle, Installing brew packages]
 
 - link:
     ~/.config:

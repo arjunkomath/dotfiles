@@ -1,0 +1,13 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+
+brew "fzf"
+brew "gh"
+brew "neovim"
+brew "python@3.8"
+brew "redis"
+brew "the_silver_searcher"
+brew "tmux"
+brew "vifm"
+brew "wget"
+brew "yarn"
