@@ -1,18 +1,23 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 
-# Libs / Utils
+# Utils
 brew "fzf"
-brew "fd"
-brew "neovim"
-brew "python@3.8"
 brew "redis"
-brew "the_silver_searcher"
-brew "tmux"
-brew "vifm"
 brew "wget"
 brew "yarn"
+
+# Languages
+brew "python@3.8"
+
+# Editor
+brew "neovim"
+brew "tmux"
+brew "fd"
+brew "the_silver_searcher"
+brew "vifm"
 
 # Apps
 cask "visual-studio-code"
 cask "iterm2"
+cask "gpg-suite-no-mail"
