@@ -111,6 +111,8 @@ alias gdd="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset 
 
 alias vim="nvim"
 
+alias x86="arch -x86_64"
+
 export GPG_TTY=$(tty)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
