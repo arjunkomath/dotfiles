@@ -6,6 +6,7 @@ brew "fzf"
 brew "redis"
 brew "wget"
 brew "yarn"
+brew "zsh-autosuggestions"
 
 # Languages
 brew "python@3.8"
