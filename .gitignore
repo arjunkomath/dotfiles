@@ -8,5 +8,6 @@ swp
 bkp
 undo
 *.swp
+.DS_Store
 
 config/nvim/plugged
