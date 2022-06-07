@@ -15,8 +15,7 @@ brew "python@3.8"
 brew "neovim"
 brew "tmux"
 brew "fd"
-brew "the_silver_searcher"
-brew "vifm"
+brew "ripgrep"
 
 # Apps
 cask "visual-studio-code"
