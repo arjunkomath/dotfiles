@@ -1,7 +1,7 @@
-local icons = {
+return {
    Text = "",
    Method = "",
-   Function = "",
+   Function = "",
    Constructor = "",
    Field = "ﰠ",
    Variable = "",
@@ -24,6 +24,13 @@ local icons = {
    Event = "",
    Operator = "",
    TypeParameter = "",
+   Table = " ",
+   Object = "",
+   Tag = " ",
+   Array = " ",
+   Boolean = "蘒",
+   Number = "",
+   String = "",
+   Calendar = " ",
+   Watch = "",
 }
-
-return icons

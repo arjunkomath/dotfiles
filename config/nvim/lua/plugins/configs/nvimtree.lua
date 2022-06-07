@@ -4,50 +4,14 @@ if not present then
    return
 end
 
-local g = vim.g
-
-g.nvim_tree_add_trailing = 0 -- append a trailing slash to folder names
-g.nvim_tree_git_hl = 0
-g.nvim_tree_highlight_opened_files = 0
-g.nvim_tree_indent_markers = 1
-g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
-
-g.nvim_tree_show_icons = {
-   folders = 1,
-   files = 1,
-   git = 1,
-}
-
-g.nvim_tree_icons = {
-   default = "",
-   symlink = "",
-   git = {
-      deleted = "",
-      ignored = "◌",
-      renamed = "➜",
-      staged = "✓",
-      unmerged = "",
-      unstaged = "✗",
-      untracked = "★",
-   },
-   folder = {
-      default = "",
-      empty = "",
-      empty_open = "",
-      open = "",
-      symlink = "",
-      symlink_open = "",
-   },
-}
-
-local default = {
+local options = {
    filters = {
       dotfiles = false,
+      exclude = { "custom" },
    },
    disable_netrw = true,
    hijack_netrw = true,
-   ignore_ft_on_setup = { "dashboard" },
-   auto_close = false,
+   ignore_ft_on_setup = { "alpha" },
    open_on_tab = false,
    hijack_cursor = true,
    hijack_unnamed_buffer_when_opening = false,
@@ -57,24 +21,63 @@ local default = {
       update_cwd = false,
    },
    view = {
-      allow_resize = true,
       side = "left",
       width = 25,
       hide_root_folder = true,
    },
    git = {
       enable = false,
-      ignore = false,
+      ignore = true,
+   },
+   actions = {
+      open_file = {
+         resize_window = true,
+      },
+   },
+   renderer = {
+      highlight_git = false,
+      highlight_opened_files = "none",
+
+      indent_markers = {
+         enable = false,
+      },
+      icons = {
+         padding = " ",
+         symlink_arrow = " ➛ ",
+         show = {
+            file = true,
+            folder = true,
+            folder_arrow = true,
+            git = false,
+         },
+         glyphs = {
+            default = "",
+            symlink = "",
+            folder = {
+               default = "",
+               empty = "",
+               empty_open = "",
+               open = "",
+               symlink = "",
+               symlink_open = "",
+               arrow_open = "",
+               arrow_closed = "",
+            },
+            git = {
+               unstaged = "✗",
+               staged = "✓",
+               unmerged = "",
+               renamed = "➜",
+               untracked = "★",
+               deleted = "",
+               ignored = "◌",
+            },
+         },
+      },
    },
 }
 
-local M = {}
+-- check for any override
+options = require("core.utils").load_override(options, "kyazdani42/nvim-tree.lua")
 
-M.setup = function(override_flag)
-   if override_flag then
-      default = require("core.utils").tbl_override_req("nvim_tree", default)
-   end
-   nvimtree.setup(default)
-end
-
-return M
+nvimtree.setup(options)

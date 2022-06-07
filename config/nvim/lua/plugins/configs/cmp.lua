@@ -6,22 +6,46 @@ end
 
 vim.opt.completeopt = "menuone,noselect"
 
-local default = {
+local function border(hl_name)
+   return {
+      { "╭", hl_name },
+      { "─", hl_name },
+      { "╮", hl_name },
+      { "│", hl_name },
+      { "╯", hl_name },
+      { "─", hl_name },
+      { "╰", hl_name },
+      { "│", hl_name },
+   }
+end
+
+local cmp_window = require "cmp.utils.window"
+
+cmp_window.info_ = cmp_window.info
+cmp_window.info = function(self)
+   local info = self:info_()
+   info.scrollable = false
+   return info
+end
+
+local options = {
+   window = {
+      completion = {
+         border = border "CmpBorder",
+      },
+      documentation = {
+         border = border "CmpDocBorder",
+      },
+   },
    snippet = {
       expand = function(args)
          require("luasnip").lsp_expand(args.body)
       end,
    },
    formatting = {
-      format = function(entry, vim_item)
+      format = function(_, vim_item)
          local icons = require "plugins.configs.lspkind_icons"
          vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
-
-         vim_item.menu = ({
-            nvim_lsp = "[LSP]",
-            nvim_lua = "[Lua]",
-            buffer = "[BUF]",
-         })[entry.source.name]
 
          return vim_item
       end,
@@ -34,10 +58,10 @@ local default = {
       ["<C-Space>"] = cmp.mapping.complete(),
       ["<C-e>"] = cmp.mapping.close(),
       ["<CR>"] = cmp.mapping.confirm {
-         behavior = cmp.ConfirmBehavior.Replace,
+         behavior = cmp.ConfirmBehavior.Insert,
          select = true,
       },
-      ["<Tab>"] = function(fallback)
+      ["<Tab>"] = cmp.mapping(function(fallback)
          if cmp.visible() then
             cmp.select_next_item()
          elseif require("luasnip").expand_or_jumpable() then
@@ -45,8 +69,11 @@ local default = {
          else
             fallback()
          end
-      end,
-      ["<S-Tab>"] = function(fallback)
+      end, {
+         "i",
+         "s",
+      }),
+      ["<S-Tab>"] = cmp.mapping(function(fallback)
          if cmp.visible() then
             cmp.select_prev_item()
          elseif require("luasnip").jumpable(-1) then
@@ -54,23 +81,21 @@ local default = {
          else
             fallback()
          end
-      end,
+      end, {
+         "i",
+         "s",
+      }),
    },
    sources = {
-      { name = "nvim_lsp" },
       { name = "luasnip" },
+      { name = "nvim_lsp" },
       { name = "buffer" },
       { name = "nvim_lua" },
       { name = "path" },
    },
 }
 
-local M = {}
-M.setup = function(override_flag)
-   if override_flag then
-      default = require("core.utils").tbl_override_req("nvim_cmp", default)
-   end
-   cmp.setup(default)
-end
+-- check for any override
+options = require("core.utils").load_override(options, "hrsh7th/nvim-cmp")
 
-return M
+cmp.setup(options)
