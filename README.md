@@ -8,7 +8,7 @@ After cloning this repo, run `install` to automatically set up the development e
 
 After opening vim, run `:PlugInstall` to install all plugins
 
-Alternate setup / look -> Try https://nvchad.github.io
+Vim config by https://github.com/craftzdog/dotfiles-public
 
 ## GPG Setup
 

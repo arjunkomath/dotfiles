@@ -1,23 +1,15 @@
-local present, impatient = pcall(require, "impatient")
+require('craftzdog.base')
+require('craftzdog.highlights')
+require('craftzdog.maps')
+require('craftzdog.plugins')
 
-if present then
-   impatient.enable_profile()
+local has = vim.fn.has
+local is_mac = has "macunix"
+local is_win = has "win32"
+
+if is_mac then
+  require('craftzdog.macos')
 end
-
-require "core"
-require "core.utils"
-require "core.options"
-
-vim.defer_fn(function()
-   require("core.utils").load_mappings()
-end, 0)
-
--- setup packer + plugins
-require("core.packer").bootstrap()
-require "plugins"
-
-local user_conf, _ = pcall(require, "custom")
-
-if user_conf then
-   require "custom"
+if is_win then
+  require('craftzdog.windows')
 end
