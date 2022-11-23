@@ -16,6 +16,8 @@ brew "neovim"
 brew "tmux"
 brew "fd"
 brew "ripgrep"
+brew "tree-sitter"
+brew "luajit"
 
 # Apps
 cask "visual-studio-code"
