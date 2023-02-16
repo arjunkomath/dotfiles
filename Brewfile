@@ -10,6 +10,7 @@ brew "zsh-autosuggestions"
 
 # Languages
 brew "python@3.8"
+brew "pyenv"
 
 # Editor
 brew "neovim"
