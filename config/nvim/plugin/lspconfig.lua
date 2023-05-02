@@ -146,3 +146,4 @@ vim.diagnostic.config({
     source = "always", -- Or "if_many"
   },
 })
+
