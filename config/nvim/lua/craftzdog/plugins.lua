@@ -8,7 +8,7 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
-  use({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
+  use { "catppuccin/nvim", as = "catppuccin" }
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/plenary.nvim' -- Common utilities
   use 'onsails/lspkind-nvim' -- vscode-like pictograms
@@ -39,7 +39,7 @@ packer.startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
   use 'akinsho/nvim-bufferline.lua'
-  -- use 'github/copilot.vim'
+  use 'github/copilot.vim'
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
