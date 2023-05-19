@@ -50,4 +50,7 @@ packer.startup(function(use)
   use 'github/copilot.vim'
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
+
+  -- Rust
+  use 'simrat39/rust-tools.nvim'
 end)
