@@ -94,11 +94,6 @@ _G.packer_plugins = {
     path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["colorbuddy.nvim"] = {
-    loaded = true,
-    path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
-    url = "https://github.com/tjdevries/colorbuddy.nvim"
-  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/copilot.vim",
@@ -108,11 +103,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/git.nvim",
     url = "https://github.com/dinhhuy258/git.nvim"
-  },
-  ["github-nvim-theme"] = {
-    loaded = true,
-    path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
-    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -148,11 +138,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["neosolarized.nvim"] = {
-    loaded = true,
-    path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
-    url = "https://github.com/svrana/neosolarized.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -218,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
+  },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["rust-tools.nvim"] = {
     loaded = true,
