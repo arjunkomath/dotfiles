@@ -18,7 +18,6 @@ packer.startup(function(use)
   use 'hrsh7th/nvim-cmp' -- Completion
   use 'neovim/nvim-lspconfig' -- LSP
   use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-  use 'MunifTanjim/prettier.nvim'
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
 
@@ -45,10 +44,11 @@ packer.startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
   use 'akinsho/nvim-bufferline.lua'
-  use 'github/copilot.vim'
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
 
-  -- Rust
+  -- Language tools
   use 'simrat39/rust-tools.nvim'
+  use 'MunifTanjim/prettier.nvim'
+  use 'github/copilot.vim'
 end)
