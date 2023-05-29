@@ -3,7 +3,6 @@ tap "homebrew/cask"
 
 # Utils
 brew "fzf"
-brew "redis"
 brew "wget"
 brew "yarn"
 brew "zsh-autosuggestions"
@@ -18,9 +17,9 @@ brew "tmux"
 brew "fd"
 brew "ripgrep"
 brew "tree-sitter"
-brew "luajit"
 
 # Apps
 cask "visual-studio-code"
 cask "iterm2"
 cask "gpg-suite-no-mail"
+cask "raycast"
