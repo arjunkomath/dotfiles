@@ -1,3 +1,3 @@
-vim.keymap.set('n', 'gg', function()
+vim.keymap.set('n', 'lg', function()
   vim.cmd('LazyGit')
 end)
