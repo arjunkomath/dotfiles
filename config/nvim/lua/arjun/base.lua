@@ -42,3 +42,6 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append { 'r' }
+
+-- Format on save
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
