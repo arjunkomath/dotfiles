@@ -45,7 +45,6 @@ packer.startup(function(use)
   })
   use 'akinsho/nvim-bufferline.lua'
   use 'lewis6991/gitsigns.nvim'
-  use 'dinhhuy258/git.nvim' -- For git blame & browse
   use 'kdheepak/lazygit.nvim'
 
   -- Language tools
