@@ -4,8 +4,8 @@ tap "homebrew/cask"
 # Utils
 brew "fzf"
 brew "wget"
-brew "yarn"
 brew "zsh-autosuggestions"
+brew "lazygit"
 
 # Languages
 brew "python@3.8"
