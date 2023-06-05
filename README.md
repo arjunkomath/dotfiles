@@ -4,11 +4,16 @@ After cloning this repo, run `install` to automatically set up the development e
 
 ![SCR-20230527-wgv](https://github.com/arjunkomath/dotfiles/assets/2555067/442c0c1e-939f-44d0-8da7-2e40dea94df9)
 
+## Homebrew
+- Installed packages by running `brew bundle`
+
+## Iterm
+- Install profile https://github.com/rose-pine/iterm
+
 ## neovim
 
-After opening vim, run `:PlugInstall` to install all plugins
-
-Vim config by https://github.com/craftzdog/dotfiles-public
+- After opening vim, run `:PackerInstall` to install all plugins
+- Config inspired by https://github.com/craftzdog/dotfiles-public
 
 ## GPG Setup
 
