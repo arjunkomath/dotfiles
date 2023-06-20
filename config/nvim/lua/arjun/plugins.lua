@@ -47,6 +47,7 @@ packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'kdheepak/lazygit.nvim'
   use 'f-person/auto-dark-mode.nvim'
+  use 'wellle/context.vim'
 
   -- Language tools
   use 'simrat39/rust-tools.nvim'
