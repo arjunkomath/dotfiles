@@ -20,6 +20,6 @@ brew "tree-sitter"
 
 # Apps
 cask "visual-studio-code"
-cask "iterm2"
+cask "wezterm"
 cask "gpg-suite-no-mail"
 cask "raycast"

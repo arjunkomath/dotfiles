@@ -45,6 +45,8 @@
       path: config/nvim
     ~/.zshrc:
       force: true
+    ~/.wezterm.lua:
+      force: true
 
 - shell:
     - [
