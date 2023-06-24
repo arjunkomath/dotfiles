@@ -23,30 +23,44 @@
 
 - link:
     ~/Brewfile:
-      if: '[ `uname` = Darwin ]'
+      if: "[ `uname` = Darwin ]"
 
 - shell:
-    - 
-      command: [
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)",
-        Installing homebrew,
-      ]
-      if: '[ `uname` = Darwin ]'
+    - command:
+        [
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)",
+          Installing homebrew,
+        ]
+      if: "[ `uname` = Darwin ]"
 
 - shell:
-    - 
-      command: [
-        git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim,
-        Installing packer,
-      ]
+    - command: brew bundle
+      stdin: true
+      stdout: true
+      description: Time to brew
+      if: "[ `uname` = Darwin ]"
+
+- shell:
+    - command:
+        [
+          git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim,
+          Installing packer,
+        ]
 
 - link:
     ~/.config/nvim:
       path: config/nvim
+    ~/.config/tmux:
+      path: config/tmux
     ~/.zshrc:
       force: true
     ~/.wezterm.lua:
       force: true
+
+- shell:
+    - command: tmux source-file ~/.config/tmux/tmux.conf | bash
+      stdout: true
+      description: Source tmux config
 
 - shell:
     - [
