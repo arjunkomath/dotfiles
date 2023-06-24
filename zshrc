@@ -120,7 +120,7 @@ export GPG_TTY=$(tty)
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f .'
 
-fcd() {
+ff() {
     local selected_dir="$(fd --type d . "$HOME/Developer" | fzf)"
     if [ -n "$selected_dir" ]; then
         tmux send-keys "cd $selected_dir" Enter
@@ -166,3 +166,8 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+# Load tmux
+if [[ -z "$TMUX" ]]; then
+  tmux;
+fi
