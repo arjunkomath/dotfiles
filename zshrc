@@ -174,8 +174,3 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-
-# Load tmux
-if [[ -z "$TMUX" ]]; then
-  tmux;
-fi
