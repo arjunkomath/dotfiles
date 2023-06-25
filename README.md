@@ -1,4 +1,4 @@
-# Dotfiles [![CI](https://github.com/arjunkomath/dotfiles/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/arjunkomath/dotfiles/actions/workflows/build.yml)
+# Dotfiles
 
 After cloning this repo, run `install` to automatically set up the development environment. Note that the install script is idempotent: it can safely be run multiple times.
 
@@ -7,13 +7,10 @@ After cloning this repo, run `install` to automatically set up the development e
 ## Homebrew
 - Installed packages by running `brew bundle`
 
-## Iterm
-- Install profile https://github.com/rose-pine/iterm
-
 ## neovim
 
 - After opening vim, run `:PackerInstall` to install all plugins
-- Config inspired by https://github.com/craftzdog/dotfiles-public
+- Config inspired by [craftzdog](https://github.com/craftzdog/dotfiles-public) & [ThePrimeagen](https://github.com/ThePrimeagen/init.lua)
 
 ## GPG Setup
 
