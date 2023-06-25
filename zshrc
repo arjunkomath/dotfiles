@@ -127,6 +127,14 @@ ff() {
     fi
 }
 
+ffv() {
+    local selected_dir="$(fd --type d . "$HOME/Developer" | fzf)"
+    if [ -n "$selected_dir" ]; then
+        tmux send-keys "cd $selected_dir" Enter
+        tmux send-keys "vim ." Enter
+    fi
+}
+
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
