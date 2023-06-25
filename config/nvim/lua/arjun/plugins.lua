@@ -33,7 +33,6 @@ packer.startup(function(use)
     run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
   use 'nvim-treesitter/nvim-treesitter-context'
-  use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'
   use 'windwp/nvim-autopairs'
@@ -44,14 +43,8 @@ packer.startup(function(use)
     }
   }
   use 'norcalli/nvim-colorizer.lua'
-  use 'folke/zen-mode.nvim'
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
   use 'akinsho/nvim-bufferline.lua'
   use 'lewis6991/gitsigns.nvim'
-  use 'kdheepak/lazygit.nvim'
 
   -- Language tools
   use 'simrat39/rust-tools.nvim'
