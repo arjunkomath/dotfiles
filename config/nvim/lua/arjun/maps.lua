@@ -29,3 +29,11 @@ keymap.set('n', '<C-w><left>', '<C-w><')
 keymap.set('n', '<C-w><right>', '<C-w>>')
 keymap.set('n', '<C-w><up>', '<C-w>+')
 keymap.set('n', '<C-w><down>', '<C-w>-')
+
+-- Undo tree
+keymap.set('n', '<C-z>', ':UndotreeToggle<Return>')
+
+-- Trouble
+keymap.set('n', 'tt', ':TroubleToggle<Return>')
+keymap.set('n', 'tw', ':TroubleToggle workspace_diagnostics<Return>')
+keymap.set('n', 'td', ':TroubleToggle document_diagnostics<Return>')
