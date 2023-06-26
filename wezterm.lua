@@ -8,7 +8,9 @@ end
 
 
 config.color_scheme = 'rose-pine'
+-- config.window_decorations = 'INTEGRATED_BUTTONS'
 config.window_decorations = 'RESIZE'
+config.hide_tab_bar_if_only_one_tab = true
 
 config.font = wezterm.font_with_fallback({
   "Fira Code",
