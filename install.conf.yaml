@@ -47,6 +47,10 @@
           Installing packer,
         ]
 
+- shell:
+    - command: curl https://sh.rustup.rs -sSf | sh -s -- -y
+      description: Install Rust
+
 - link:
     ~/.config/nvim:
       path: config/nvim
