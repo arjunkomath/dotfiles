@@ -12,11 +12,8 @@ config.color_scheme = 'rose-pine'
 config.window_decorations = 'RESIZE'
 config.hide_tab_bar_if_only_one_tab = true
 
-config.font = wezterm.font_with_fallback({
-  "Fira Code",
-  "JetBrains Mono",
-  "monospace",
-})
-config.font_size = 15.0
+config.font =
+    wezterm.font('FiraCode Nerd Font', { weight = 'Regular' })
+config.font_size = 17.0
 
 return config
