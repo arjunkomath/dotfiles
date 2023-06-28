@@ -13,7 +13,8 @@ telescope.setup {
   defaults = {
     mappings = {
       n = {
-        ["q"] = actions.close
+        ["q"] = actions.close,
+        ["sd"] = actions.smart_send_to_qflist,
       },
     },
     file_ignore_patterns = {

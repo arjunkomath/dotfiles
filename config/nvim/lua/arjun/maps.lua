@@ -37,3 +37,7 @@ keymap.set('n', '<C-z>', ':UndotreeToggle<Return>')
 keymap.set('n', 'tt', ':TroubleToggle<Return>')
 keymap.set('n', 'tw', ':TroubleToggle workspace_diagnostics<Return>')
 keymap.set('n', 'td', ':TroubleToggle document_diagnostics<Return>')
+
+-- Quick fix
+keymap.set('n', 'qf', ':copen<Return>')
+keymap.set('n', 'qc', ':cclose<Return>')
