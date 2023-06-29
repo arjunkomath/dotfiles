@@ -5,6 +5,7 @@ After cloning this repo, run `install` to automatically set up the development e
 ![SCR-20230527-wgv](https://github.com/arjunkomath/dotfiles/assets/2555067/442c0c1e-939f-44d0-8da7-2e40dea94df9)
 
 ## Homebrew
+
 - Installed packages by running `brew bundle`
 
 ## neovim
@@ -18,8 +19,19 @@ After cloning this repo, run `install` to automatically set up the development e
 2. Import / Create new key
 3. Get key ID from your list of keys `gpg --list-keys`
 4. Enable signing
+
 ```sh
 git config --global commit.gpgsign true
 git config --global user.signingkey ABCDEF01 # Use key ID copied earlier
 ```
+
 5. Commit and verify using `git log --show-signature`
+
+## TS Setup
+
+Install following:
+
+```
+npm install -g eslint_d
+npm install -g @fsouza/prettierd
+```
