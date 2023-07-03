@@ -121,14 +121,14 @@ export GPG_TTY=$(tty)
 export FZF_DEFAULT_COMMAND='fd --type f .'
 
 ff() {
-    local selected_dir="$(fd --type d . "$HOME/Developer" | fzf)"
+    local selected_dir="$(fd --type d . "$HOME/Developer" "$HOME/Downloads" | fzf)"
     if [ -n "$selected_dir" ]; then
         tmux send-keys "cd $selected_dir" Enter
     fi
 }
 
 ffv() {
-    local selected_dir="$(fd --type d . "$HOME/Developer" | fzf)"
+    local selected_dir="$(fd --type d . "$HOME/Developer" "$HOME/Downloads" | fzf)"
     if [ -n "$selected_dir" ]; then
         tmux send-keys "cd $selected_dir" Enter
         tmux send-keys "vim ." Enter
