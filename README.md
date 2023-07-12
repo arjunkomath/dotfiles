@@ -27,11 +27,6 @@ git config --global user.signingkey ABCDEF01 # Use key ID copied earlier
 
 5. Commit and verify using `git log --show-signature`
 
-## TS Setup
+## LSPs
 
-Install following:
-
-```
-npm install -g eslint_d
-npm install -g @fsouza/prettierd
-```
+Install using Mason
