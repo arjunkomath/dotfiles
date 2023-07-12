@@ -41,3 +41,7 @@ keymap.set('n', 'td', ':TroubleToggle document_diagnostics<Return>')
 -- Quick fix
 keymap.set('n', 'qf', ':copen<Return>')
 keymap.set('n', 'qc', ':cclose<Return>')
+
+-- move lines
+keymap.set('n', '<A-j>', ':m .+1<CR>==')
+keymap.set('n', '<A-k>', ':m .-2<CR>==')
