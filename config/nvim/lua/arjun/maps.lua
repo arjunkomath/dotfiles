@@ -42,10 +42,6 @@ keymap.set('n', 'td', ':TroubleToggle document_diagnostics<Return>')
 keymap.set('n', 'qf', ':copen<Return>')
 keymap.set('n', 'qc', ':cclose<Return>')
 
--- move lines
-keymap.set('n', '<A-j>', ':m .+1<CR>==')
-keymap.set('n', '<A-k>', ':m .-2<CR>==')
-
 -- keymap.set('n', '<C-j>', '<Cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 -- keymap.set('n', '<C-k>', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 -- keymap.set('n', 'gl', '<Cmd>Lspsaga show_line_diagnostics<CR>', opts)
