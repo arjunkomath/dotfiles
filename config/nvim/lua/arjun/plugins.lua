@@ -64,4 +64,5 @@ packer.startup(function(use)
   use 'simrat39/rust-tools.nvim'
   use 'prettier/vim-prettier'
   use 'github/copilot.vim'
+  use 'ray-x/go.nvim'
 end)
