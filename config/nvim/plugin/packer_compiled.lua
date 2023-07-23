@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["go.nvim"] = {
+    loaded = true,
+    path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/go.nvim",
+    url = "https://github.com/ray-x/go.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -238,6 +243,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/vim-prettier",
     url = "https://github.com/prettier/vim-prettier"
+  },
+  ["zen-mode.nvim"] = {
+    loaded = true,
+    path = "/Users/arjunkomath/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    url = "https://github.com/folke/zen-mode.nvim"
   }
 }
 

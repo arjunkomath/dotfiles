@@ -35,7 +35,7 @@ packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
   use 'akinsho/nvim-bufferline.lua'
   use 'lewis6991/gitsigns.nvim'
-
+  use 'folke/zen-mode.nvim'
 
   use {
     'VonHeikemen/lsp-zero.nvim',
