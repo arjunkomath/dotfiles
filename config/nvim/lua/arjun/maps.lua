@@ -6,9 +6,6 @@ keymap.set('n', 'x', '"_x')
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
 
--- Select all
-keymap.set('n', '<C-a>', 'gg<S-v>G')
-
 -- Save file
 keymap.set('n', '<C-s>', ':w<Return>')
 
