@@ -174,3 +174,27 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+if [[ `uname` == Darwin ]]; then
+    MAX_MEMORY_UNITS=KB
+else
+    MAX_MEMORY_UNITS=MB
+fi
+
+TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
+'avg shared (code):         %X KB'$'\n'\
+'avg unshared (data/stack): %D KB'$'\n'\
+'total (sum):               %K KB'$'\n'\
+'max memory:                %M '$MAX_MEMORY_UNITS''$'\n'\
+'page faults from disk:     %F'$'\n'\
+'other page faults:         %R'
+
+# bun completions
+[ -s "/Users/arjunkomath/.bun/_bun" ] && source "/Users/arjunkomath/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+export PATH=$JAVA_HOME/bin:$PATH
