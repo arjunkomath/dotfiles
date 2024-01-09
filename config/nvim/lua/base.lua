@@ -31,7 +31,22 @@ vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
+vim.opt.clipboard:append { 'unnamedplus' }
 vim.g.skip_ts_context_commentstring_module = true
+vim.opt.cursorline = true
+vim.opt.termguicolors = true
+vim.opt.winblend = 0
+vim.opt.wildoptions = 'pum'
+vim.opt.pumblend = 5
+vim.opt.background = 'dark'
+
+-- highlight yanked text for 200ms using the "Visual" highlight group
+vim.cmd [[
+  augroup highlight_yank
+  autocmd!
+  au TextYankPost * silent! lua vim.highlight.on_yank({higroup="Visual", timeout=100})
+  augroup END
+]]
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
