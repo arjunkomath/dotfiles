@@ -13,7 +13,7 @@ config.window_decorations = 'RESIZE'
 config.hide_tab_bar_if_only_one_tab = true
 
 config.font =
-    wezterm.font('FiraCode Nerd Font', { weight = 'Regular' })
+    wezterm.font('FiraCode Nerd Font Mono', { weight = 'Regular' })
 config.font_size = 17.0
 
 return config
