@@ -13,6 +13,12 @@ After cloning this repo, run `install` to automatically set up the development e
 - After opening vim, run `:PackerInstall` to install all plugins
 - Config inspired by [craftzdog](https://github.com/craftzdog/dotfiles-public) & [ThePrimeagen](https://github.com/ThePrimeagen/init.lua)
 
+### Updates
+
+- Packages `:PackerSync`
+- TreeSitter `:TSUpdate`
+- Mason `:Mason` and then `U`
+
 ## GPG Setup
 
 1. Install https://gpgtools.org
