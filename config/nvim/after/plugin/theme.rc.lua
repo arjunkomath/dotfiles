@@ -1,52 +1,47 @@
 require('rose-pine').setup({
-  --- @usage 'auto'|'main'|'moon'|'dawn'
-  variant = 'main',
-  --- @usage 'main'|'moon'|'dawn'
-  dark_variant = 'main',
-  bold_vert_split = false,
-  dim_nc_background = false,
-  disable_background = false,
-  disable_float_background = false,
-  disable_italics = true,
+  variant = "auto",      -- auto, main, moon, or dawn
+  dark_variant = "main", -- main, moon, or dawn
+  dim_inactive_windows = false,
+  extend_background_behind_borders = true,
 
-  --- @usage string hex value or named color from rosepinetheme.com/palette
-  groups = {
-    background = 'base',
-    background_nc = '_experimental_nc',
-    panel = 'surface',
-    panel_nc = 'base',
-    border = 'highlight_med',
-    comment = 'muted',
-    link = 'iris',
-    punctuation = 'subtle',
-
-    error = 'love',
-    hint = 'iris',
-    info = 'foam',
-    warn = 'gold',
-
-    headings = {
-      h1 = 'iris',
-      h2 = 'foam',
-      h3 = 'rose',
-      h4 = 'gold',
-      h5 = 'pine',
-      h6 = 'foam',
-    }
-    -- or set all headings at once
-    -- headings = 'subtle'
+  styles = {
+    bold = true,
+    italic = false,
+    transparency = false,
   },
 
-  -- Change specific vim highlight groups
-  -- https://github.com/rose-pine/neovim/wiki/Recipes
-  highlight_groups = {
-    ColorColumn = { bg = 'rose' },
+  groups = {
+    border = "muted",
+    link = "iris",
+    panel = "surface",
 
-    -- Blend colours against the "base" background
-    CursorLine = { bg = 'foam', blend = 10 },
-    StatusLine = { fg = 'love', bg = 'love', blend = 10 },
-  }
+    error = "love",
+    hint = "iris",
+    info = "foam",
+    warn = "gold",
+
+    git_add = "foam",
+    git_change = "rose",
+    git_delete = "love",
+    git_dirty = "rose",
+    git_ignore = "muted",
+    git_merge = "iris",
+    git_rename = "pine",
+    git_stage = "iris",
+    git_text = "rose",
+    git_untracked = "subtle",
+
+    headings = {
+      h1 = "iris",
+      h2 = "foam",
+      h3 = "rose",
+      h4 = "gold",
+      h5 = "pine",
+      h6 = "foam",
+    },
+    -- Alternatively, set all headings at once.
+    -- headings = "subtle",
+  },
 })
 
--- Set colorscheme after options
 vim.cmd('colorscheme rose-pine')
