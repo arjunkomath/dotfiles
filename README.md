@@ -10,12 +10,12 @@ After cloning this repo, run `install` to automatically set up the development e
 
 ## neovim
 
-- After opening vim, run `:PackerInstall` to install all plugins
+- After opening vim, run `:Lazy` to install all plugins
 - Config inspired by [craftzdog](https://github.com/craftzdog/dotfiles-public) & [ThePrimeagen](https://github.com/ThePrimeagen/init.lua)
 
 ### Updates
 
-- Packages `:PackerSync`
+- Packages `:Lazy` & then `S` to sync
 - TreeSitter `:TSUpdate`
 - Mason `:Mason` and then `U`
 
