@@ -14,6 +14,6 @@ config.hide_tab_bar_if_only_one_tab = true
 
 config.font =
     wezterm.font('FiraCode Nerd Font Mono', { weight = 'Regular' })
-config.font_size = 17.0
+config.font_size = 18.0
 
 return config
