@@ -6,6 +6,7 @@ brew "fzf"
 brew "wget"
 brew "zsh-autosuggestions"
 brew "lazygit"
+brew "btop"
 
 # Languages
 brew "python@3.8"
