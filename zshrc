@@ -199,10 +199,12 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 export PATH=$JAVA_HOME/bin:$PATH
 
-if [[ -z "$TMUX" ]]; then
+if [ "$TERM_PROGRAM" != "vscode" ]; then
+  if [[ -z "$TMUX" ]]; then
     if tmux has-session -t main 2>/dev/null; then
-        exec tmux attach-session -t main
+      exec tmux attach-session -t main
     else
-        exec tmux new-session -s main
+      exec tmux new-session -s main
     fi
+  fi
 fi
