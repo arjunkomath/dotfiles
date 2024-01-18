@@ -11,3 +11,4 @@ undo
 .DS_Store
 
 config/nvim/plugged
+config/tmux/plugins
