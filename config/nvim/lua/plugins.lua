@@ -1,5 +1,6 @@
 return {
   { 'rose-pine/neovim', name = 'rose-pine' },
+  { "catppuccin/nvim",  name = "catppuccin", priority = 1000 },
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -17,7 +18,8 @@ return {
   'nvim-telescope/telescope-file-browser.nvim',
   'windwp/nvim-autopairs',
   'windwp/nvim-ts-autotag',
-  { 'numToStr/Comment.nvim',
+  {
+    'numToStr/Comment.nvim',
     dependencies = {
       'JoosepAlviste/nvim-ts-context-commentstring'
     }
@@ -54,3 +56,4 @@ return {
   'github/copilot.vim',
   'ray-x/go.nvim',
 }
+
