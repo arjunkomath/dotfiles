@@ -72,7 +72,7 @@ require("catppuccin").setup({
     },
     telescope = {
       enabled = true,
-      style = "nvchad",
+      -- style = "nvchad",
     },
     dropbar = {
       enabled = true,

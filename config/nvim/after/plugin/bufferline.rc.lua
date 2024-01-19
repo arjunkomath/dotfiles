@@ -10,6 +10,7 @@ bufferline.setup({
     show_close_icon = false,
     color_icons = true
   },
+  highlights = require("catppuccin.groups.integrations.bufferline").get()
 })
 
 vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
