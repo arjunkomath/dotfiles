@@ -48,6 +48,13 @@
         ]
 
 - shell:
+    - command:
+        [
+          git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm,
+          Installing TPM,
+        ]
+
+- shell:
     - command: curl https://sh.rustup.rs -sSf | sh -s -- -y
       description: Install Rust
 
