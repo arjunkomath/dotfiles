@@ -11,15 +11,21 @@ keymap.set('n', '<C-s>', ':w<Return>')
 
 -- New tab
 keymap.set('n', 'te', ':tabedit')
+
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w')
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
+
 -- Move window
 keymap.set('n', '<Space>', '<C-w>w')
 keymap.set('', 'sh', '<C-w>h')
 keymap.set('', 'sk', '<C-w>k')
 keymap.set('', 'sj', '<C-w>j')
 keymap.set('', 'sl', '<C-w>l')
+
+-- Move lines
+keymap.set('n', '<A-j>', ':m .+1<CR>==')
+keymap.set('n', '<A-k>', ':m .-2<CR>==')
 
 -- Resize window
 keymap.set('n', '<C-w><left>', '<C-w><')
