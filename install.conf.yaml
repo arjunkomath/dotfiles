@@ -14,16 +14,28 @@
     ~/.ssh:
       mode: 0700
 
+- link:
+    ~/.config/nvim:
+      path: config/nvim
+    ~/.config/tmux:
+      path: config/tmux
+    ~/.config/lazygit:
+      path: config/lazygit
+    ~/.zshrc:
+      force: true
+    ~/.wezterm.lua:
+      force: true
+    ~/Brewfile:
+      if: "[ `uname` = Darwin ]"
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+
+- shell:
     - [
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)",
         Installing ohmyzsh,
       ]
-
-- link:
-    ~/Brewfile:
-      if: "[ `uname` = Darwin ]"
 
 - shell:
     - command:
@@ -43,13 +55,6 @@
 - shell:
     - command:
         [
-          git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim,
-          Installing packer,
-        ]
-
-- shell:
-    - command:
-        [
           git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm,
           Installing TPM,
         ]
@@ -57,16 +62,6 @@
 - shell:
     - command: curl https://sh.rustup.rs -sSf | sh -s -- -y
       description: Install Rust
-
-- link:
-    ~/.config/nvim:
-      path: config/nvim
-    ~/.config/tmux:
-      path: config/tmux
-    ~/.zshrc:
-      force: true
-    ~/.wezterm.lua:
-      force: true
 
 - shell:
     - command: tmux source-file ~/.config/tmux/tmux.conf | bash
