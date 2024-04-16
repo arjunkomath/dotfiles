@@ -7,6 +7,7 @@ brew "wget"
 brew "zsh-autosuggestions"
 brew "lazygit"
 brew "btop"
+brew "blueutil"
 
 # Languages
 brew "python@3.8"

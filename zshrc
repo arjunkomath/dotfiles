@@ -116,6 +116,9 @@ alias vim="nvim"
 
 alias x86="arch -x86_64"
 
+# Restart bluetooth
+alias rblue="blueutil --power 0 && blueutil --power 1"
+
 export GPG_TTY=$(tty)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
