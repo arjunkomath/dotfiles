@@ -152,9 +152,9 @@ export PATH=~/Library/Android/sdk/tools:$PATH
 export PATH=~/Library/Android/sdk/platform-tools:$PATH
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -205,7 +205,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 export PATH=$JAVA_HOME/bin:$PATH
 
-if [ "$TERM_PROGRAM" != "vscode" ]; then
+if [[ "$TERM_PROGRAM" == "WezTerm" ]]; then
   if [[ -z "$TMUX" ]]; then
     if tmux has-session -t main 2>/dev/null; then
       exec tmux attach-session -t main
