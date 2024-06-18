@@ -24,9 +24,6 @@ ts.setup {
     "go",
     "scss",
   },
-  autotag = {
-    enable = true,
-  },
 }
 
 require('ts_context_commentstring').setup {
