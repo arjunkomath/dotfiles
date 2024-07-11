@@ -8,6 +8,7 @@ brew "zsh-autosuggestions"
 brew "lazygit"
 brew "btop"
 brew "blueutil"
+brew "gnu-sed"
 
 # Languages
 brew "python@3.8"
