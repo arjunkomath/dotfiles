@@ -50,6 +50,10 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "gcr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "gr", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
+  if vim.lsp.inlay_hint then
+    vim.lsp.inlay_hint.enable(true, { 0 })
+  end
 end)
 
 lsp.setup()

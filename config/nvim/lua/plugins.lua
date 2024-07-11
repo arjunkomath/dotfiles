@@ -341,6 +341,5 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   -- theme
-  { 'rose-pine/neovim', name = 'rose-pine' },
-  { "catppuccin/nvim",  name = "catppuccin", priority = 1000 },
+  { 'rose-pine/neovim', name = 'rose-pine', priority = 1000 },
 }

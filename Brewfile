@@ -16,7 +16,6 @@ brew "pyenv"
 
 # Editor
 brew "neovim"
-brew "tmux"
 brew "fd"
 brew "ripgrep"
 brew "tree-sitter"

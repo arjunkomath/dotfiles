@@ -13,9 +13,6 @@ After cloning this repo, run `install` to automatically set up the development e
 - After opening vim, run `:Lazy` to install all plugins
 - Config inspired by [craftzdog](https://github.com/craftzdog/dotfiles-public) & [ThePrimeagen](https://github.com/ThePrimeagen/init.lua)
 
-## Tmux
-- Install plugin manager https://github.com/tmux-plugins/tpm
-
 ### Updates
 
 - Packages `:Lazy` & then `S` to sync

@@ -28,4 +28,17 @@ config.cell_width = 0.95
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 30
 
+config.keys = {
+  {
+    key = '"',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+  },
+  {
+    key = '%',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+  }
+}
+
 return config

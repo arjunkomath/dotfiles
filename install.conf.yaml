@@ -17,8 +17,6 @@
 - link:
     ~/.config/nvim:
       path: config/nvim
-    ~/.config/tmux:
-      path: config/tmux
     ~/.config/lazygit:
       path: config/lazygit
     ~/.zshrc:
@@ -62,11 +60,6 @@
 - shell:
     - command: curl https://sh.rustup.rs -sSf | sh -s -- -y
       description: Install Rust
-
-- shell:
-    - command: tmux source-file ~/.config/tmux/tmux.conf | bash
-      stdout: true
-      description: Source tmux config
 
 - shell:
     - [
