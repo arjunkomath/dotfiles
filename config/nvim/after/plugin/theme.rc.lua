@@ -1,5 +1,5 @@
 require("rose-pine").setup({
-  variant = "auto",      -- auto, main, moon, or dawn
+  variant = "main",      -- auto, main, moon, or dawn
   dark_variant = "main", -- main, moon, or dawn
   dim_inactive_windows = true,
   extend_background_behind_borders = true,
@@ -58,3 +58,4 @@ require("rose-pine").setup({
 })
 
 vim.cmd("colorscheme rose-pine")
+vim.cmd("highlight Normal guibg=black guifg=white")

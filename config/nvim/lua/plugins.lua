@@ -1,6 +1,4 @@
 return {
-  { 'rose-pine/neovim', name = 'rose-pine' },
-  { "catppuccin/nvim",  name = "catppuccin", priority = 1000 },
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -341,5 +339,8 @@ return {
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-  }
+  },
+  -- theme
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  { "catppuccin/nvim",  name = "catppuccin", priority = 1000 },
 }
