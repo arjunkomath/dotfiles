@@ -52,3 +52,6 @@ keymap.set('n', '<C-Return>', '<cmd>lua require("spectre.actions").run_replace()
 
 -- Neotree
 keymap.set('n', '<Space>f', ':Neotree toggle<Return>')
+
+-- Neogit
+keymap.set('n', '<C-g>', ':Neogit<Return>')
