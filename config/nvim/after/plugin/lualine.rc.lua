@@ -2,7 +2,7 @@ local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 
 lualine.setup {
-  theme = "rose-pine",
+  theme = "tokyonight",
   options = {
     icons_enabled = true,
     theme = 'auto',

@@ -10,7 +10,6 @@ bufferline.setup({
     show_close_icon = false,
     color_icons = true
   },
-  highlights = require('rose-pine.plugins.bufferline')
 })
 
 vim.keymap.set('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})

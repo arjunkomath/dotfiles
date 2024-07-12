@@ -331,6 +331,18 @@ return {
     }
   },
   'nvim-pack/nvim-spectre',
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",  -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
+
+      -- Only one of these is needed, not both.
+      "nvim-telescope/telescope.nvim", -- optional
+      "ibhagwan/fzf-lua",              -- optional
+    },
+    config = true
+  },
   -- Language tools
   'simrat39/rust-tools.nvim',
   'prettier/vim-prettier',
@@ -341,5 +353,12 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   -- theme
-  { 'rose-pine/neovim', name = 'rose-pine', priority = 1000 },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+    },
+  }
 }
