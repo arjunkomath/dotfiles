@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local act = wezterm.action
 
 local config = {}
 
@@ -38,7 +39,9 @@ config.keys = {
     key = '%',
     mods = 'CTRL|SHIFT',
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
-  }
+  },
+  -- activate pane selection mode with the default alphabet (labels are "a", "s", "d", "f" and so on)
+  { key = '0', mods = 'CTRL', action = act.PaneSelect },
 }
 
 return config
