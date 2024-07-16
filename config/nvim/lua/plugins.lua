@@ -91,11 +91,20 @@ return {
   },
   -- theme
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
+    "rose-pine/neovim",
     opts = {
-      transparent = true,
+      variant = "auto",      -- auto, main, moon, or dawn
+      dark_variant = "main", -- main, moon, or dawn
+      dim_inactive_windows = false,
+      styles = {
+        bold = true,
+        italic = false,
+        transparency = true,
+      },
     },
+    config = function(_, opts)
+      require("rose-pine").setup(opts)
+      vim.cmd("colorscheme rose-pine")
+    end
   }
 }
