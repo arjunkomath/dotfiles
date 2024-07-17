@@ -17,7 +17,7 @@ config.font =
     wezterm.font('FiraCode Nerd Font Mono', { weight = 'Regular' })
 config.font_size = 18.0
 config.cell_width = 0.95
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.95
 config.macos_window_background_blur = 30
 
 config.keys = {
