@@ -17,4 +17,8 @@ vim.g.maplocalleader = ' '
 require('base')
 require('maps')
 
+if vim.g.neovide then
+  require('neovide')
+end
+
 require('lazy').setup('plugins')
