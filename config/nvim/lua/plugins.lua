@@ -80,6 +80,7 @@ return {
     },
     config = true
   },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   -- Language tools
   'simrat39/rust-tools.nvim',
   'prettier/vim-prettier',
