@@ -50,8 +50,8 @@ keymap.set('n', '<Space><Space>', ':Spectre<Return>')
 keymap.set('n', '<C-f>', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>')
 keymap.set('n', '<C-Return>', '<cmd>lua require("spectre.actions").run_replace()<CR>')
 
--- Neotree
-keymap.set('n', '<Space>f', ':Neotree toggle<Return>')
+-- Oil
+keymap.set('n', '<Space>f', ':Oil<Return>')
 
 -- Neogit
 keymap.set('n', '<C-g>', ':Neogit<Return>')

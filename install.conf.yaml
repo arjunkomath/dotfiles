@@ -19,6 +19,8 @@
       path: config/nvim
     ~/.config/lazygit:
       path: config/lazygit
+    ~/.config/neovide:
+      path: config/neovide
     ~/.zshrc:
       force: true
     ~/.wezterm.lua:
@@ -49,13 +51,6 @@
       stdout: true
       description: Time to brew
       if: "[ `uname` = Darwin ]"
-
-- shell:
-    - command:
-        [
-          git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm,
-          Installing TPM,
-        ]
 
 - shell:
     - command: curl https://sh.rustup.rs -sSf | sh -s -- -y

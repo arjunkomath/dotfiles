@@ -14,18 +14,9 @@ return {
   'nvim-treesitter/nvim-treesitter-context',
   'nvim-telescope/telescope.nvim',
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    },
-    config = function()
-      require("neo-tree").setup({
-        enable_git_status = false
-      })
-    end,
+    'stevearc/oil.nvim',
+    opts = {},
+    dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
   },
   'windwp/nvim-autopairs',
   'windwp/nvim-ts-autotag',
@@ -96,11 +87,11 @@ return {
     opts = {
       variant = "auto",      -- auto, main, moon, or dawn
       dark_variant = "main", -- main, moon, or dawn
-      dim_inactive_windows = false,
+      dim_inactive_windows = true,
       styles = {
         bold = true,
         italic = false,
-        transparency = true,
+        transparency = false,
       },
     },
     config = function(_, opts)
