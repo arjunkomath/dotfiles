@@ -87,11 +87,11 @@ return {
     opts = {
       variant = "auto",      -- auto, main, moon, or dawn
       dark_variant = "main", -- main, moon, or dawn
-      dim_inactive_windows = true,
+      dim_inactive_windows = false,
       styles = {
         bold = true,
         italic = false,
-        transparency = false,
+        transparency = true,
       },
     },
     config = function(_, opts)
