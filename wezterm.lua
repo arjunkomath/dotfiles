@@ -14,7 +14,7 @@ config.window_decorations = 'RESIZE'
 config.hide_tab_bar_if_only_one_tab = true
 
 config.font =
-    wezterm.font('FiraCode Nerd Font Mono', { weight = 'Regular' })
+    wezterm.font('Fira Code Retina')
 config.font_size = 18.0
 config.cell_width = 0.95
 config.window_background_opacity = 0.95
