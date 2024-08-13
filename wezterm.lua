@@ -7,7 +7,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.color_scheme = 'rose-pine'
+config.color_scheme = 'Raycast_Dark'
 
 -- config.window_decorations = 'INTEGRATED_BUTTONS'
 config.window_decorations = 'RESIZE'
