@@ -7,7 +7,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.color_scheme = 'Raycast_Dark'
+config.color_scheme = 'Tokyo Night'
 
 -- config.window_decorations = 'INTEGRATED_BUTTONS'
 config.window_decorations = 'RESIZE'
@@ -17,7 +17,7 @@ config.font =
     wezterm.font('Fira Code Retina')
 config.font_size = 18.0
 config.cell_width = 0.95
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.98
 config.macos_window_background_blur = 30
 
 config.keys = {
