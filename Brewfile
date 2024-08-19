@@ -9,6 +9,7 @@ brew "lazygit"
 brew "btop"
 brew "blueutil"
 brew "gnu-sed"
+brew "yazi"
 
 # Languages
 brew "python@3.8"
