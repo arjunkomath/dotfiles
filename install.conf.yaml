@@ -21,6 +21,8 @@
       path: config/lazygit
     ~/.config/neovide:
       path: config/neovide
+    ~/.config/zed:
+      path: config/zed
     ~/.zshrc:
       force: true
     ~/.wezterm.lua:
