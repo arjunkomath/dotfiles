@@ -10,6 +10,7 @@ brew "btop"
 brew "blueutil"
 brew "gnu-sed"
 brew "yazi"
+brew "swiftformat"
 
 # Languages
 brew "python@3.8"
