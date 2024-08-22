@@ -88,20 +88,19 @@ return {
   },
   -- theme
   {
-    "rose-pine/neovim",
-    opts = {
-      variant = "auto",      -- auto, main, moon, or dawn
-      dark_variant = "main", -- main, moon, or dawn
-      dim_inactive_windows = false,
-      styles = {
-        bold = true,
-        italic = false,
-        transparency = true,
-      },
+    'jesseleite/nvim-noirbuddy',
+    dependencies = {
+      { 'tjdevries/colorbuddy.nvim' }
     },
-    config = function(_, opts)
-      require("rose-pine").setup(opts)
-      vim.cmd("colorscheme rose-pine")
+    lazy = false,
+    priority = 1000,
+    opts = {
+      -- All of your `setup(opts)` will go here
+    },
+    config = function()
+      require('noirbuddy').setup {
+        preset = 'slate',
+      }
     end
   }
 }
