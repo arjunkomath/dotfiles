@@ -87,20 +87,32 @@ return {
     opts = {}
   },
   -- theme
+  -- {
+  --   'jesseleite/nvim-noirbuddy',
+  --   dependencies = {
+  --     { 'tjdevries/colorbuddy.nvim' }
+  --   },
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     -- All of your `setup(opts)` will go here
+  --   },
+  --   config = function()
+  --     require('noirbuddy').setup {
+  --       preset = 'miami-nights',
+  --     }
+  --   end
+  -- }
   {
-    'jesseleite/nvim-noirbuddy',
-    dependencies = {
-      { 'tjdevries/colorbuddy.nvim' }
-    },
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     opts = {
-      -- All of your `setup(opts)` will go here
+      -- Your configuration options here
     },
     config = function()
-      require('noirbuddy').setup {
-        preset = 'slate',
-      }
-    end
+      -- Load the colorscheme
+      vim.cmd [[colorscheme tokyonight]]
+    end,
   }
 }

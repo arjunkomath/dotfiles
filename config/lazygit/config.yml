@@ -7,24 +7,6 @@ gui:
   expandFocusedSidePanel: false
   mainPanelSplitMode: "flexible" # one of 'horizontal' | 'flexible' | 'vertical'
   language: "auto" # one of 'auto' | 'en' | 'zh' | 'pl' | 'nl'
-  theme:
-    activeBorderColor:
-      - magenta
-      - bold
-    inactiveBorderColor:
-      - blue
-    optionsTextColor:
-      - black
-    selectedLineBgColor:
-      - black
-    selectedRangeBgColor:
-      - yellow
-    cherryPickedCommitBgColor:
-      - blue
-    cherryPickedCommitFgColor:
-      - cyan
-    unstagedChangesColor:
-      - white
   commitLength:
     show: true
   mouseEvents: true
@@ -36,36 +18,6 @@ gui:
   showCommandLog: false
   showBottomLine: false
   commandLogSize: 8
-  authorColors: # in case you're not happy with the randomly assigned colour
-    "arjunkomath": "#9db5bf"
-git:
-  paging:
-    useConfig: true
-    colorArg: always
-    pager: delta --dark --color-only --side-by-side
-  merging:
-    # only applicable to unix users
-    manualCommit: false
-    # extra args passed to `git merge`, e.g. --no-ff
-    args: ""
-  skipHookPrefix: WIP
-  autoFetch: true
-  autoRefresh: true
-  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --"
-  allBranchesLogCmd: "git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium"
-  overrideGpg: false # prevents lazygit from spawning a separate process when using GPG
-  disableForcePushing: true
-  parseEmoji: true
-  log:
-    # one of date-order, author-date-order, topo-order.
-    # topo-order makes it easier to read the git log graph, but commits may not
-    # appear chronologically. See https://git-scm.com/docs/git-log#_commit_ordering
-    order: "topo-order"
-    # one of always, never, when-maximised
-    # this determines whether the git graph is rendered in the commits panel
-    showGraph: "always"
-    # displays the whole git graph by default in the commits panel (equivalent to passing the `--all` argument to `git log`)
-    showWholeGraph: true
 refresher:
   refreshInterval: 10 # file/submodule refresh interval in seconds
   fetchInterval: 60 # re-fetch interval in seconds
@@ -76,5 +28,6 @@ confirmOnQuit: false
 # determines whether hitting 'esc' will quit the application when there is nothing to cancel/close
 quitOnTopLevelReturn: true
 disableStartupPopups: false
-notARepository: "prompt" # one of: 'prompt' | 'create' | 'skip'
+notARepository: "skip" # one of: 'prompt' | 'create' | 'skip'
 promptToReturnFromSubprocess: false # display confirmation when subprocess terminates
+
