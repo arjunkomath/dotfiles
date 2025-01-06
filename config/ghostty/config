@@ -21,5 +21,23 @@ palette = 13=#ff7ab2
 palette = 14=#dabaff
 palette = 15=#dfdfe0
 font-size = 16.5
-font-thicken = false
+# font-thicken = true
 font-family = MonoLisa
+
+font-feature                   = calt
+font-feature                   = liga
+font-feature                   = ss13
+
+font-size                      = 13
+window-inherit-font-size       = true
+
+# Look and Feel
+adjust-cursor-thickness        = 3
+adjust-underline-position      = 3
+bold-is-bright                 = true
+cursor-invert-fg-bg            = true
+cursor-opacity                 = 0.8
+link-url                       = true
+mouse-hide-while-typing        = true
+theme                          = dark:tokyonight_night,light:tokyonight_day
+window-vsync                   = true
