@@ -24,7 +24,7 @@ brew "tree-sitter"
 
 # Apps
 cask "visual-studio-code"
-cask "wezterm"
+cask "ghostty"
 cask "gpg-suite-no-mail"
 cask "raycast"
 cask "xcodes"
