@@ -19,13 +19,9 @@
       path: config/nvim
     ~/.config/lazygit:
       path: config/lazygit
-    ~/.config/neovide:
-      path: config/neovide
-    ~/.config/zed:
-      path: config/zed
+    ~/.config/ghostty:
+      path: config/ghostty
     ~/.zshrc:
-      force: true
-    ~/.wezterm.lua:
       force: true
     ~/Brewfile:
       if: "[ `uname` = Darwin ]"
