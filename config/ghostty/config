@@ -41,3 +41,5 @@ link-url                       = true
 mouse-hide-while-typing        = true
 theme                          = dark:tokyonight_night,light:tokyonight_day
 window-vsync                   = true
+
+adjust-cell-width="-10%"
