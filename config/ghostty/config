@@ -2,6 +2,6 @@ theme = catppuccin-mocha
 
 font-size = 18
 font-thicken = true
-font-family = MonoLisa
+font-family = "Fira Code"
 
 adjust-cell-width="-10%"
