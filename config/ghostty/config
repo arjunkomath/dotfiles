@@ -1,7 +1,7 @@
 theme = catppuccin-mocha
 
 font-size = 18
-font-thicken = true
+font-thicken = false
 font-family = "Fira Code"
 
 adjust-cell-width="-10%"
