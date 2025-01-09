@@ -86,7 +86,6 @@ return {
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {}
   },
-  -- theme
   -- {
   --   'jesseleite/nvim-noirbuddy',
   --   dependencies = {
@@ -102,17 +101,40 @@ return {
   --       preset = 'miami-nights',
   --     }
   --   end
-  -- }
+  -- },
+  -- {
+  --   "folke/tokyonight.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("tokyonight").setup({
+  --       styles = {
+  --         comments = { italic = false },
+  --         keywords = { italic = false },
+  --         functions = { italic = false },
+  --         variables = { italic = false },
+  --       },
+  --       on_highlights = function(hl, c)
+  --         hl.Normal = { bg = "#000000" }
+  --       end
+  --     })
+  --     vim.cmd [[colorscheme tokyonight]]
+  --   end,
+  -- },
   {
-    "folke/tokyonight.nvim",
-    lazy = false,
+    "rose-pine/neovim",
+    name = "rose-pine",
     priority = 1000,
-    opts = {
-      -- Your configuration options here
-    },
     config = function()
-      -- Load the colorscheme
-      vim.cmd [[colorscheme tokyonight]]
-    end,
+      require("rose-pine").setup({
+        styles = {
+          italic = false,
+        },
+        highlight_groups = {
+          Normal = { bg = "#000000" }
+        }
+      })
+      vim.cmd("colorscheme rose-pine")
+    end
   }
 }
