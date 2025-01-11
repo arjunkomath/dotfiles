@@ -74,7 +74,6 @@ return {
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   -- Language tools
   'simrat39/rust-tools.nvim',
-  'prettier/vim-prettier',
   'github/copilot.vim',
   'ray-x/go.nvim',
   {
