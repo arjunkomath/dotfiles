@@ -2,13 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export TERM="xterm-256color"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="apple"
-
-plugins=(git virtualenv)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -36,11 +30,6 @@ alias gco="git checkout"
 alias gdd="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 
 alias vim="nvim"
-
-alias x86="arch -x86_64"
-
-# Restart bluetooth
-alias rblue="blueutil --power 0 && blueutil --power 1"
 
 export GPG_TTY=$(tty)
 
@@ -80,8 +69,8 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # Android
-export PATH=~/Library/Android/sdk/tools:$PATH
-export PATH=~/Library/Android/sdk/platform-tools:$PATH
+export PATH=/Users/arjunkomath/Library/Android/sdk/tools:$PATH
+export PATH=/Users/arjunkomath/Library/Android/sdk/platform-tools:$PATH
 
 # pyenv
 # export PYENV_ROOT="$HOME/.pyenv"
@@ -136,3 +125,21 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 export PATH=$JAVA_HOME/bin:$PATH
+
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/arjunkomath/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+alias claude="/Users/arjunkomath/.claude/local/claude"
+
+ZSH_THEME="amuse" # set by `omz`
+PROMPT='
+%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info)
+$ '
+RPROMPT='$(if [[ -f package.json ]]; then echo "%{$fg[blue]%}⬢ node $(node --version)%{$reset_color%}"; fi)'
