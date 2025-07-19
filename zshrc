@@ -160,3 +160,6 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'max memory:                %M '$MAX_MEMORY_UNITS''$'\n'\
 'page faults from disk:     %F'$'\n'\
 'other page faults:         %R'
+
+# bun completions
+[ -s "/Users/arjunkomath/.bun/_bun" ] && source "/Users/arjunkomath/.bun/_bun"
