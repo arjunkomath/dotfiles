@@ -1,6 +1,3 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-
 # Utils
 brew "fzf"
 brew "wget"
