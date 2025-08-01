@@ -92,5 +92,9 @@ return {
       })
       vim.cmd("colorscheme rose-pine")
     end
+  },
+  {
+    'stevearc/conform.nvim',
+    opts = {},
   }
 }

@@ -48,6 +48,15 @@ keymap.set('n', 'qc', ':cclose<Return>')
 -- Spectre aka Search and Replace
 keymap.set('n', '<Space><Space>', ':Spectre<Return>')
 keymap.set('n', '<C-f>', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>')
+
+-- Format with conform
+keymap.set({ "n", "v" }, "<leader>f", function()
+  require("conform").format({
+    lsp_fallback = true,
+    async = false,
+    timeout_ms = 500,
+  })
+end, { desc = "Format file or range (in visual mode)" })
 keymap.set('n', '<C-Return>', '<cmd>lua require("spectre.actions").run_replace()<CR>')
 
 -- Oil
