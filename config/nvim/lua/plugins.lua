@@ -11,8 +11,8 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   },
-  'nvim-treesitter/nvim-treesitter-context',
   'nvim-telescope/telescope.nvim',
+  'wellle/context.vim',
   {
     'stevearc/oil.nvim',
     opts = {},
@@ -81,46 +81,6 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
-    "m4xshen/hardtime.nvim",
-    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-    opts = {}
-  },
-  -- {
-  --   'jesseleite/nvim-noirbuddy',
-  --   dependencies = {
-  --     { 'tjdevries/colorbuddy.nvim' }
-  --   },
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {
-  --     -- All of your `setup(opts)` will go here
-  --   },
-  --   config = function()
-  --     require('noirbuddy').setup {
-  --       preset = 'miami-nights',
-  --     }
-  --   end
-  -- },
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("tokyonight").setup({
-  --       styles = {
-  --         comments = { italic = false },
-  --         keywords = { italic = false },
-  --         functions = { italic = false },
-  --         variables = { italic = false },
-  --       },
-  --       on_highlights = function(hl, c)
-  --         hl.Normal = { bg = "#000000" }
-  --       end
-  --     })
-  --     vim.cmd [[colorscheme tokyonight]]
-  --   end,
-  -- },
-  {
     "rose-pine/neovim",
     name = "rose-pine",
     priority = 1000,
@@ -129,9 +89,6 @@ return {
         styles = {
           italic = false,
         },
-        highlight_groups = {
-          Normal = { bg = "#000000" }
-        }
       })
       vim.cmd("colorscheme rose-pine")
     end

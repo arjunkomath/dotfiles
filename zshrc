@@ -43,7 +43,6 @@ alias gd="git diff"
 alias gco="git checkout"
 alias gdd="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias vim="nvim"
-alias claude="$HOME/.claude/local/claude"
 
 export GPG_TTY=$(tty)
 
@@ -102,6 +101,8 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+export PATH="~/.local/bin:$PATH"
 
 # PERFORMANCE OPTIMIZATION: Auto-load NVM only when package.json is present
 autoload -U add-zsh-hook
@@ -163,3 +164,5 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 
 # bun completions
 [ -s "/Users/arjunkomath/.bun/_bun" ] && source "/Users/arjunkomath/.bun/_bun"
+
+alias claude="/Users/arjunkomath/.claude/local/claude"
