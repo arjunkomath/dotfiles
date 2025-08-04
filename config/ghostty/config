@@ -2,10 +2,11 @@ theme = light:rose-pine-dawn,dark:rose-pine
 
 font-size = 18
 font-thicken = false
-font-family = "Fira Code"
+# font-family = "Fira Code"
+font-family = "Google Sans Code"
 
 adjust-cell-width="-10%"
-background-opacity = 0.9
+background-opacity = 0.95
 background-blur-radius = 30
 
 macos-titlebar-proxy-icon = hidden
