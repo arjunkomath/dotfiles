@@ -1,0 +1,181 @@
+{
+  "appHotkeys" : {
+    "ai.perplexity.comet" : {
+      "hotkey" : "⌥⌘B",
+      "keyCode" : 11,
+      "modifiers" : 2304
+    },
+    "com.mitchellh.ghostty" : {
+      "hotkey" : "⌥⌘T",
+      "keyCode" : 17,
+      "modifiers" : 2304
+    }
+  },
+  "calendarSearchEnabled" : true,
+  "hasCompletedOnboarding" : true,
+  "lastModified" : "2025-08-26T12:18:48Z",
+  "launchAtLogin" : false,
+  "mainHotkeyKeyCode" : 49,
+  "mainHotkeyModifiers" : 256,
+  "quickLinks" : [
+    {
+      "iconName" : "house",
+      "id" : "home",
+      "isSystemDefault" : true,
+      "keyCode" : 0,
+      "keywords" : [
+        "home",
+        "user"
+      ],
+      "modifiers" : 0,
+      "name" : "Home",
+      "urlString" : "\/Users\/arjunkomath"
+    },
+    {
+      "iconName" : "menubar.dock.rectangle",
+      "id" : "desktop",
+      "isSystemDefault" : true,
+      "keyCode" : 0,
+      "keywords" : [
+        "desktop"
+      ],
+      "modifiers" : 0,
+      "name" : "Desktop",
+      "urlString" : "~\/Desktop"
+    },
+    {
+      "iconName" : "doc.text",
+      "id" : "documents",
+      "isSystemDefault" : true,
+      "keyCode" : 0,
+      "keywords" : [
+        "documents",
+        "docs"
+      ],
+      "modifiers" : 0,
+      "name" : "Documents",
+      "urlString" : "~\/Documents"
+    },
+    {
+      "iconName" : "arrow.down.circle",
+      "id" : "downloads",
+      "isSystemDefault" : true,
+      "keyCode" : 0,
+      "keywords" : [
+        "downloads"
+      ],
+      "modifiers" : 0,
+      "name" : "Downloads",
+      "urlString" : "~\/Downloads"
+    },
+    {
+      "iconName" : "photo",
+      "id" : "pictures",
+      "isSystemDefault" : true,
+      "keyCode" : 0,
+      "keywords" : [
+        "pictures",
+        "photos",
+        "images"
+      ],
+      "modifiers" : 0,
+      "name" : "Pictures",
+      "urlString" : "~\/Pictures"
+    },
+    {
+      "iconName" : "film",
+      "id" : "movies",
+      "isSystemDefault" : true,
+      "keyCode" : 0,
+      "keywords" : [
+        "movies",
+        "videos"
+      ],
+      "modifiers" : 0,
+      "name" : "Movies",
+      "urlString" : "~\/Movies"
+    },
+    {
+      "iconName" : "music.note",
+      "id" : "music",
+      "isSystemDefault" : true,
+      "keyCode" : 0,
+      "keywords" : [
+        "music",
+        "audio"
+      ],
+      "modifiers" : 0,
+      "name" : "Music",
+      "urlString" : "~\/Music"
+    },
+    {
+      "iconName" : "app.badge",
+      "id" : "applications",
+      "isSystemDefault" : true,
+      "keyCode" : 0,
+      "keywords" : [
+        "applications",
+        "apps"
+      ],
+      "modifiers" : 0,
+      "name" : "Applications",
+      "urlString" : "\/Applications"
+    },
+    {
+      "iconName" : "building.columns",
+      "id" : "library",
+      "isSystemDefault" : true,
+      "keyCode" : 0,
+      "keywords" : [
+        "library",
+        "system"
+      ],
+      "modifiers" : 0,
+      "name" : "Library",
+      "urlString" : "~\/Library"
+    },
+    {
+      "iconName" : "apple.terminal.on.rectangle",
+      "id" : "D0A5D060-B87E-4578-8452-015D8822B583",
+      "isSystemDefault" : false,
+      "keyCode" : 0,
+      "keywords" : [
+        "developer"
+      ],
+      "modifiers" : 0,
+      "name" : "Developer",
+      "urlString" : "\/Users\/arjunkomath\/Developer"
+    }
+  ],
+  "quickLinksHasLoadedBefore" : true,
+  "resultsLayout" : "compact",
+  "showMenuBarIcon" : true,
+  "version" : "1.0",
+  "windowHotkeys" : {
+    "first-two-thirds" : {
+      "hotkey" : "⌃⌥E",
+      "keyCode" : 14,
+      "modifiers" : 6144
+    },
+    "last-two-thirds" : {
+      "hotkey" : "⌃⌥T",
+      "keyCode" : 17,
+      "modifiers" : 6144
+    },
+    "left-half" : {
+      "hotkey" : "⌃⌥←",
+      "keyCode" : 123,
+      "modifiers" : 6144
+    },
+    "maximize" : {
+      "hotkey" : "⌃⌥Return",
+      "keyCode" : 36,
+      "modifiers" : 6144
+    },
+    "right-half" : {
+      "hotkey" : "⌃⌥→",
+      "keyCode" : 124,
+      "modifiers" : 6144
+    }
+  }
+}
