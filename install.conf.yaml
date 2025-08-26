@@ -49,13 +49,3 @@
       stdout: true
       description: Time to brew
       if: "[ `uname` = Darwin ]"
-
-- shell:
-    - command: curl https://sh.rustup.rs -sSf | sh -s -- -y
-      description: Install Rust
-
-- shell:
-    - [
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash,
-        Installing NVM,
-      ]
