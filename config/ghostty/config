@@ -1,6 +1,6 @@
-theme = light:rose-pine-dawn,dark:rose-pine
+theme = light:Rose Pine Dawn,dark:Rose Pine
 
-font-size = 18
+font-size = 17
 font-thicken = false
 font-family = "Fira Code Retina"
 
