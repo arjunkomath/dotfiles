@@ -1,0 +1,53 @@
+{
+  // Appearance
+  "terminal": {
+    "font_size": 15,
+    "dock": "right"
+  },
+  "buffer_line_height": "standard",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
+  },
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 1,
+    "active_line_width": 3,
+    "coloring": "indent_aware",
+    "background_coloring": "disabled"
+  },
+  "relative_line_numbers": "enabled",
+  "ui_font_size": 16,
+  "buffer_font_family": "Fira Code",
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "system",
+    "light": "Vercel Light",
+    "dark": "Vercel Dark"
+  },
+  // LSP
+  "formatter": "language_server",
+  "format_on_save": "on",
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+      "max_severity": null // or specify a severity like "error", "warning"
+    }
+  },
+  "code_actions_on_format": {
+    "source.fixAll": true,
+    "source.organizeImports.biome": true
+  },
+  // AI
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  // Others
+  "vim_mode": true,
+  "confirm_quit": true,
+  "base_keymap": "VSCode",
+  "telemetry": {
+    "metrics": false
+  }
+}
