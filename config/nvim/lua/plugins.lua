@@ -36,7 +36,6 @@ return {
     end
   },
   'folke/zen-mode.nvim',
-  'folke/sidekick.nvim',
   {
     'VonHeikemen/lsp-zero.nvim',
     dependencies = {
@@ -69,28 +68,34 @@ return {
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   -- Language tools
   'simrat39/rust-tools.nvim',
-  {
-    'zbirenbaum/copilot.lua',
-    cmd = "Copilot",
-    event = "InsertEnter",
-  },
   'ray-x/go.nvim',
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    priority = 1000,
+    'projekt0n/github-nvim-theme',
+    name = 'github-theme',
+    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      require("rose-pine").setup({
-        styles = {
-          italic = false,
-        },
+      require('github-theme').setup({
+        -- ...
       })
-      vim.cmd("colorscheme rose-pine")
-    end
+
+      vim.cmd('colorscheme github_dark_default')
+    end,
+  },
+  {
+    'f-person/auto-dark-mode.nvim',
+    opts = {
+      set_dark_mode = function()
+        vim.cmd('colorscheme github_dark_default')
+      end,
+      set_light_mode = function()
+        vim.cmd('colorscheme github_light')
+      end,
+    },
   },
   {
     'stevearc/conform.nvim',

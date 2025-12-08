@@ -9,6 +9,7 @@ background-opacity = 0.95
 background-blur-radius = 30
 
 macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = tabs
 title = 👻
 shell-integration-features = no-title
 mouse-scroll-multiplier = 0.4
@@ -17,3 +18,4 @@ keybind = cmd+h=goto_split:left
 keybind = cmd+l=goto_split:right
 keybind = cmd+k=goto_split:up
 keybind = cmd+j=goto_split:down
+keybind = shift+enter=text:\x1b\r
