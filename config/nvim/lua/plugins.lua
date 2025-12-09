@@ -100,5 +100,11 @@ return {
   {
     'stevearc/conform.nvim',
     opts = {},
+  },
+  'github/copilot.vim',
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
   }
 }

@@ -9,6 +9,12 @@ keymap.set('n', '-', '<C-x>')
 -- Save file
 keymap.set('n', '<C-s>', ':w<Return>')
 
+-- Paste with Command-v
+keymap.set('n', '<D-v>', '"+p')
+keymap.set('v', '<D-v>', '"+p')
+keymap.set('i', '<D-v>', '<C-r>+')
+keymap.set('c', '<D-v>', '<C-r>+')
+
 -- New tab
 keymap.set('n', 'te', ':tabedit')
 

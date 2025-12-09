@@ -43,6 +43,7 @@ alias gd="git diff"
 alias gco="git checkout"
 alias gdd="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias vim="nvim"
+alias nv="neovide --fork"
 
 export GPG_TTY=$(tty)
 

@@ -1,4 +1,4 @@
-theme = light:GitHub Light Default,dark:GitHub Dark Default
+theme = light:GitHub Light Default,dark:GitHub Dark
 
 font-size = 17
 font-thicken = false

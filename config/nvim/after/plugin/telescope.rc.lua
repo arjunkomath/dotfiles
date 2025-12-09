@@ -25,7 +25,8 @@ vim.keymap.set('n', ';f',
   function()
     builtin.find_files({
       no_ignore = false,
-      hidden = true
+      hidden = true,
+      previewer = false,
     })
   end)
 vim.keymap.set('n', ';r', function()
