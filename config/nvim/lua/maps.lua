@@ -64,3 +64,5 @@ keymap.set('n', '<Space>f', ':Oil<Return>')
 
 -- Neogit
 keymap.set('n', '<C-g>', ':Neogit<Return>')
+
+keymap.set('n', '<D-w>', ':bdelete<Return>')
