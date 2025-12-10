@@ -1,9 +1,55 @@
 return {
   {
+    'rcarriga/nvim-notify',
+    lazy = false,
+    priority = 100,
+    config = function()
+      local notify = require('notify')
+      notify.setup({
+        stages = "fade",
+        timeout = 3000,
+        background_colour = "#000000",
+      })
+      vim.notify = notify
+    end
+  },
+  {
+    'stevearc/dressing.nvim',
+    event = "VeryLazy",
+    opts = {
+      select = {
+        backend = { "telescope", "builtin" },
+      },
+    },
+  },
+  {
+    'nvim-neotest/neotest',
+    lazy = true,
+    cmd = "Neotest",
+    keys = {
+      { "<leader>tt", function() require("neotest").run.run() end, desc = "Run nearest test" },
+      { "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run file tests" },
+      { "<leader>ts", function() require("neotest").summary.toggle() end, desc = "Toggle summary" },
+      { "<leader>to", function() require("neotest").output.open({ enter = true }) end, desc = "Show output" },
+    },
+    dependencies = {
+      'nvim-neotest/nvim-nio',
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+      'marilari88/neotest-vitest',
+    },
+  },
+  {
     "folke/trouble.nvim",
+    lazy = true,
+    cmd = { "TroubleToggle", "Trouble" },
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
-  'mbbill/undotree',           -- Undo tree
+  {
+    'mbbill/undotree',
+    lazy = true,
+    cmd = "UndotreeToggle",
+  },
   'nvim-lualine/lualine.nvim', -- Statusline
   'nvim-lua/plenary.nvim',     -- Common utilities
   'nvim-tree/nvim-web-devicons',
@@ -31,11 +77,17 @@ return {
   'lewis6991/gitsigns.nvim',
   {
     'f-person/git-blame.nvim',
+    lazy = true,
+    cmd = { "GitBlameToggle", "GitBlameEnable", "GitBlameDisable" },
     config = function()
       require('gitblame').setup()
     end
   },
-  'folke/zen-mode.nvim',
+  {
+    'folke/zen-mode.nvim',
+    lazy = true,
+    cmd = "ZenMode",
+  },
   {
     'VonHeikemen/lsp-zero.nvim',
     dependencies = {
@@ -67,8 +119,16 @@ return {
   },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   -- Language tools
-  'simrat39/rust-tools.nvim',
-  'ray-x/go.nvim',
+  {
+    'simrat39/rust-tools.nvim',
+    lazy = true,
+    ft = "rust",
+  },
+  {
+    'ray-x/go.nvim',
+    lazy = true,
+    ft = "go",
+  },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },

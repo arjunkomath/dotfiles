@@ -2,6 +2,7 @@
 brew "fzf"
 brew "wget"
 brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
 brew "lazygit"
 brew "gnu-sed"
 brew "yazi"

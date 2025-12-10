@@ -13,7 +13,6 @@ source $ZSH/oh-my-zsh.sh
 PROMPT='
 %{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info)
 $ '
-RPROMPT='$(if [[ -f package.json ]]; then echo "%{$fg[blue]%}⬢ node $(node --version)%{$reset_color%}"; fi)'
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -35,7 +34,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Aliases
 alias gpl="git pull origin master"
-alias gph="git pull origin master"
+alias gph="git push origin HEAD"
 alias gpull="git pull origin"
 alias gpush="git push origin"
 alias gs="git status"
@@ -58,14 +57,14 @@ fi
 ff() {
     local selected_dir="$(fd --type d . "$HOME/Developer" "$HOME/Downloads" | fzf)"
     if [ -n "$selected_dir" ]; then
-        cd $selected_dir
+        cd "$selected_dir"
     fi
 }
 
 ffv() {
     local selected_dir="$(fd --type d . "$HOME/Developer" "$HOME/Downloads" | fzf)"
     if [ -n "$selected_dir" ]; then
-        cd $selected_dir
+        cd "$selected_dir"
         nvim .
     fi
 }
@@ -82,6 +81,10 @@ function yy() {
 # PERFORMANCE OPTIMIZATION: Use cached homebrew prefix
 if [[ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
     source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
+
+if [[ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+    source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 fi
 
 # PATH exports (consolidated)
@@ -103,7 +106,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-export PATH="~/.local/bin:$PATH"
 
 # PERFORMANCE OPTIMIZATION: Auto-load NVM only when package.json is present
 autoload -U add-zsh-hook
@@ -163,7 +165,5 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'page faults from disk:     %F'$'\n'\
 'other page faults:         %R'
 
-# bun completions
-[ -s "/Users/arjunkomath/.bun/_bun" ] && source "/Users/arjunkomath/.bun/_bun"
 
 alias claude="/Users/arjunkomath/.claude/local/claude"

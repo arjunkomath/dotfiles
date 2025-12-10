@@ -10,20 +10,8 @@ ts.setup {
     enable = true,
     disable = {},
   },
-  ensure_installed = {
-    "markdown",
-    "markdown_inline",
-    "tsx",
-    "typescript",
-    "toml",
-    "json",
-    "yaml",
-    "css",
-    "html",
-    "lua",
-    "go",
-    "scss",
-  },
+  auto_install = true,
+  sync_install = false,
 }
 
 require('ts_context_commentstring').setup {
