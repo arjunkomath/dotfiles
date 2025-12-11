@@ -118,42 +118,73 @@ return {
     config = true
   },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-  -- Language tools
   {
     'simrat39/rust-tools.nvim',
     lazy = true,
     ft = "rust",
+    config = function()
+      require('rust-tools').setup({})
+    end,
   },
   {
     'ray-x/go.nvim',
     lazy = true,
-    ft = "go",
+    ft = { "go", "gomod", "gowork", "gotmpl" },
+    dependencies = {
+      'ray-x/guihua.lua',
+    },
+    build = ':lua require("go.install").update_all_sync()',
+    config = function()
+      require('go').setup()
+
+      local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*.go",
+        callback = function()
+          require('go.format').goimport()
+        end,
+        group = format_sync_grp,
+      })
+    end,
   },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
-    'projekt0n/github-nvim-theme',
-    name = 'github-theme',
-    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
     config = function()
-      require('github-theme').setup({
-        -- ...
+      require('tokyonight').setup({
+        style = "night",
+        transparent = false,
+        terminal_colors = true,
+        styles = {
+          sidebars = "dark",
+          floats = "dark",
+        },
+        on_highlights = function(hl, c)
+          hl.TelescopeNormal = { bg = c.bg_dark, fg = c.fg_dark }
+          hl.TelescopeBorder = { bg = c.bg_dark, fg = c.bg_dark }
+          hl.TelescopePromptNormal = { bg = c.bg_dark }
+          hl.TelescopePromptBorder = { bg = c.bg_dark, fg = c.bg_dark }
+          hl.TelescopePromptTitle = { bg = c.blue, fg = c.bg_dark }
+          hl.TelescopePreviewTitle = { bg = c.green, fg = c.bg_dark }
+          hl.TelescopeResultsTitle = { bg = c.bg_dark, fg = c.bg_dark }
+        end,
       })
-
-      vim.cmd('colorscheme github_dark_default')
+      vim.cmd('colorscheme tokyonight')
     end,
   },
   {
     'f-person/auto-dark-mode.nvim',
     opts = {
       set_dark_mode = function()
-        vim.cmd('colorscheme github_dark_default')
+        vim.cmd('colorscheme tokyonight-night')
       end,
       set_light_mode = function()
-        vim.cmd('colorscheme github_light')
+        vim.cmd('colorscheme tokyonight-day')
       end,
     },
   },

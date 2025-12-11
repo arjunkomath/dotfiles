@@ -9,7 +9,7 @@ local lsp_attach = function(client, bufnr)
   vim.keymap.set("n", "ga", function() vim.lsp.buf.workspace_symbol() end, opts)
   vim.keymap.set("n", "gj", function() vim.diagnostic.goto_prev() end, opts)
   vim.keymap.set("n", "gk", function() vim.diagnostic.goto_next() end, opts)
-  vim.keymap.set("n", "<D-.>", function() vim.lsp.buf.code_action() end, opts)
+  vim.keymap.set("n", "<C-.>", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", "gcr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "gr", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
@@ -32,7 +32,7 @@ lsp_zero.extend_lspconfig({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { 'rust_analyzer' },
+  ensure_installed = {},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
