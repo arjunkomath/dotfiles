@@ -37,7 +37,6 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 keymap.set('n', '<C-z>', ':UndotreeToggle<Return>')
 
 keymap.set('n', 'tt', ':Trouble diagnostics toggle<Return>')
-keymap.set('n', 'tw', ':Trouble diagnostics toggle<Return>')
 keymap.set('n', 'td', ':Trouble diagnostics toggle filter.buf=0<Return>')
 
 -- Quick fix

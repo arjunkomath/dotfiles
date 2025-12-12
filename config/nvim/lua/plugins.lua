@@ -80,14 +80,6 @@ return {
   'akinsho/nvim-bufferline.lua',
   'lewis6991/gitsigns.nvim',
   {
-    'f-person/git-blame.nvim',
-    lazy = true,
-    cmd = { "GitBlameToggle", "GitBlameEnable", "GitBlameDisable" },
-    config = function()
-      require('gitblame').setup()
-    end
-  },
-  {
     'folke/zen-mode.nvim',
     lazy = true,
     cmd = "ZenMode",
@@ -126,14 +118,6 @@ return {
     config = true
   },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-  {
-    'simrat39/rust-tools.nvim',
-    lazy = true,
-    ft = "rust",
-    config = function()
-      require('rust-tools').setup({})
-    end,
-  },
   {
     'ray-x/go.nvim',
     lazy = true,
