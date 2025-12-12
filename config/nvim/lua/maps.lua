@@ -36,10 +36,9 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 -- Undo tree
 keymap.set('n', '<C-z>', ':UndotreeToggle<Return>')
 
--- Trouble
-keymap.set('n', 'tt', ':TroubleToggle<Return>')
-keymap.set('n', 'tw', ':TroubleToggle workspace_diagnostics<Return>')
-keymap.set('n', 'td', ':TroubleToggle document_diagnostics<Return>')
+keymap.set('n', 'tt', ':Trouble diagnostics toggle<Return>')
+keymap.set('n', 'tw', ':Trouble diagnostics toggle<Return>')
+keymap.set('n', 'td', ':Trouble diagnostics toggle filter.buf=0<Return>')
 
 -- Quick fix
 keymap.set('n', 'qf', ':copen<Return>')

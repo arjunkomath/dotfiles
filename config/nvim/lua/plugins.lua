@@ -42,7 +42,8 @@ return {
   {
     "folke/trouble.nvim",
     lazy = true,
-    cmd = { "TroubleToggle", "Trouble" },
+    cmd = "Trouble",
+    opts = {},
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   {
@@ -56,6 +57,9 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    dependencies = {
+      'HiPhish/rainbow-delimiters.nvim',
+    },
   },
   'nvim-telescope/telescope.nvim',
   'wellle/context.vim',
@@ -87,6 +91,10 @@ return {
     'folke/zen-mode.nvim',
     lazy = true,
     cmd = "ZenMode",
+  },
+  {
+    'folke/twilight.nvim',
+    lazy = true,
   },
   {
     'VonHeikemen/lsp-zero.nvim',
