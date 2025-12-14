@@ -13,6 +13,7 @@ telescope.setup {
       n = {
         ["q"] = actions.close,
         ["sd"] = actions.smart_send_to_qflist,
+        ["p"] = function() vim.api.nvim_put({ vim.fn.getreg("+") }, "", true, true) end,
       },
     },
     file_ignore_patterns = {
@@ -43,4 +44,10 @@ vim.keymap.set('n', ';;', function()
 end)
 vim.keymap.set('n', ';e', function()
   builtin.diagnostics()
+end)
+vim.keymap.set('n', ';s', function()
+  builtin.lsp_document_symbols()
+end)
+vim.keymap.set('n', ';S', function()
+  builtin.lsp_dynamic_workspace_symbols()
 end)

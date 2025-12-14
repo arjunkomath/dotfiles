@@ -106,16 +106,21 @@ return {
   },
   'nvim-pack/nvim-spectre',
   {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",  -- required
-      "sindrets/diffview.nvim", -- optional - Diff integration
-
-      -- Only one of these is needed, not both.
-      "nvim-telescope/telescope.nvim", -- optional
-      "ibhagwan/fzf-lua",              -- optional
+    "kdheepak/lazygit.nvim",
+    lazy = true,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
     },
-    config = true
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    keys = {
+      { "<C-g>", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+    },
   },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
@@ -144,39 +149,33 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
-    'folke/tokyonight.nvim',
+    'EdenEast/nightfox.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      require('tokyonight').setup({
-        style = "night",
-        transparent = false,
-        terminal_colors = true,
-        styles = {
-          sidebars = "dark",
-          floats = "dark",
+      require('nightfox').setup({
+        options = {
+          transparent = false,
+          terminal_colors = true,
+          dim_inactive = false,
+          styles = {
+            comments = "italic",
+            keywords = "bold",
+            types = "italic,bold",
+          },
         },
-        on_highlights = function(hl, c)
-          hl.TelescopeNormal = { bg = c.bg_dark, fg = c.fg_dark }
-          hl.TelescopeBorder = { bg = c.bg_dark, fg = c.bg_dark }
-          hl.TelescopePromptNormal = { bg = c.bg_dark }
-          hl.TelescopePromptBorder = { bg = c.bg_dark, fg = c.bg_dark }
-          hl.TelescopePromptTitle = { bg = c.blue, fg = c.bg_dark }
-          hl.TelescopePreviewTitle = { bg = c.green, fg = c.bg_dark }
-          hl.TelescopeResultsTitle = { bg = c.bg_dark, fg = c.bg_dark }
-        end,
       })
-      vim.cmd('colorscheme tokyonight')
+      vim.cmd('colorscheme nightfox')
     end,
   },
   {
     'f-person/auto-dark-mode.nvim',
     opts = {
       set_dark_mode = function()
-        vim.cmd('colorscheme tokyonight-night')
+        vim.cmd('colorscheme nightfox')
       end,
       set_light_mode = function()
-        vim.cmd('colorscheme tokyonight-day')
+        vim.cmd('colorscheme dayfox')
       end,
     },
   },
