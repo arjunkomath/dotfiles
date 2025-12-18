@@ -19,4 +19,16 @@ if vim.g.neovide then
   vim.g.neovide_input_macos_option_key_is_meta = 'only_left'
 
   vim.g.neovide_scale_factor = 1.0
+
+  vim.keymap.set("n", "<C-=>", function()
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * 1.1
+  end)
+
+  vim.keymap.set("n", "<C-->", function()
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor / 1.1
+  end)
+
+  vim.keymap.set("n", "<C-0>", function()
+    vim.g.neovide_scale_factor = 1.0
+  end)
 end
