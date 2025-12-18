@@ -1,5 +1,3 @@
-local lsp_zero = require('lsp-zero')
-
 local lsp_attach = function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
 
@@ -19,23 +17,29 @@ local lsp_attach = function(client, bufnr)
   end
 end
 
-lsp_zero.extend_lspconfig({
-  sign_text = {
-    error = 'E',
-    warn = 'W',
-    hint = 'H',
-    info = 'I'
-  },
-  lsp_attach = lsp_attach,
-  capabilities = require('cmp_nvim_lsp').default_capabilities()
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = 'E',
+      [vim.diagnostic.severity.WARN] = 'W',
+      [vim.diagnostic.severity.HINT] = 'H',
+      [vim.diagnostic.severity.INFO] = 'I',
+    }
+  }
 })
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {},
   handlers = {
     function(server_name)
-      require('lspconfig')[server_name].setup({})
+      require('lspconfig')[server_name].setup({
+        on_attach = lsp_attach,
+        capabilities = capabilities,
+      })
     end,
   }
 })
@@ -48,7 +52,6 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },
-    { name = 'luasnip' },
     { name = 'nvim_lua' },
   },
   mapping = cmp.mapping.preset.insert({
@@ -59,13 +62,4 @@ cmp.setup({
     ['<Tab>'] = cmp.mapping.confirm({ select = true }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   }),
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-})
-
-vim.diagnostic.config({
-  virtual_text = true
 })

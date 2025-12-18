@@ -2,7 +2,7 @@ if vim.g.neovide then
   vim.o.guifont = "Fira Code Retina:h17"
 
   vim.g.neovide_opacity = 0.9
-  vim.g.neovide_floating_shadow = true
+  vim.g.neovide_floating_shadow = false
   vim.g.neovide_floating_blur_amount_x = 2.0
   vim.g.neovide_floating_blur_amount_y = 2.0
   vim.g.neovide_window_blurred = true

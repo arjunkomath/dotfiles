@@ -167,3 +167,4 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 
 
 alias claude="/Users/arjunkomath/.claude/local/claude"
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
