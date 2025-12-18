@@ -49,6 +49,7 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 cmp.setup({
   sources = {
+    { name = 'copilot' },
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },

@@ -1,5 +1,5 @@
 if vim.g.neovide then
-  vim.o.guifont = "Fira Code Retina:h17"
+  vim.o.guifont = "Berkeley Mono:h17:w-1"
 
   vim.g.neovide_opacity = 0.9
   vim.g.neovide_floating_shadow = false

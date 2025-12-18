@@ -62,7 +62,13 @@ return {
     },
   },
   'nvim-telescope/telescope.nvim',
-  'wellle/context.vim',
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    opts = {
+      max_lines = 3,
+      multiline_threshold = 1,
+    },
+  },
   {
     'stevearc/oil.nvim',
     opts = {},
@@ -76,7 +82,7 @@ return {
       'JoosepAlviste/nvim-ts-context-commentstring'
     }
   },
-  'norcalli/nvim-colorizer.lua',
+  'NvChad/nvim-colorizer.lua',
   'akinsho/nvim-bufferline.lua',
   'lewis6991/gitsigns.nvim',
   {
@@ -96,7 +102,10 @@ return {
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-nvim-lua',
-  'nvim-pack/nvim-spectre',
+  {
+    'MagicDuck/grug-far.nvim',
+    opts = {},
+  },
   {
     "kdheepak/lazygit.nvim",
     lazy = true,
@@ -175,7 +184,22 @@ return {
     'stevearc/conform.nvim',
     opts = {},
   },
-  'github/copilot.vim',
+  {
+    'zbirenbaum/copilot.lua',
+    cmd = "Copilot",
+    event = "InsertEnter",
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    },
+  },
+  {
+    'zbirenbaum/copilot-cmp',
+    dependencies = { 'zbirenbaum/copilot.lua' },
+    config = function()
+      require('copilot_cmp').setup()
+    end,
+  },
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",

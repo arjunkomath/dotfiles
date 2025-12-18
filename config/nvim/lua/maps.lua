@@ -43,9 +43,8 @@ keymap.set('n', 'td', ':Trouble diagnostics toggle filter.buf=0<Return>')
 keymap.set('n', 'qf', ':copen<Return>')
 keymap.set('n', 'qc', ':cclose<Return>')
 
--- Spectre aka Search and Replace
-keymap.set('n', '<Space><Space>', ':Spectre<Return>')
-keymap.set('n', '<C-f>', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>')
+keymap.set('n', '<Space><Space>', '<cmd>GrugFar<CR>')
+keymap.set('n', '<C-f>', '<cmd>lua require("grug-far").open({ prefills = { paths = vim.fn.expand("%") } })<CR>')
 
 -- Format with conform
 keymap.set({ "n", "v" }, "<leader>f", function()
@@ -55,13 +54,8 @@ keymap.set({ "n", "v" }, "<leader>f", function()
     timeout_ms = 500,
   })
 end, { desc = "Format file or range (in visual mode)" })
-keymap.set('n', '<C-Return>', '<cmd>lua require("spectre.actions").run_replace()<CR>')
 
--- Oil
 keymap.set('n', '<Space>f', ':Oil<Return>')
-
--- Neogit
-keymap.set('n', '<C-g>', ':Neogit<Return>')
 
 keymap.set('n', '<leader>x', ':bdelete<Return>')
 
