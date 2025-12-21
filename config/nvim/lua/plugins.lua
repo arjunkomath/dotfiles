@@ -97,6 +97,19 @@ return {
   'neovim/nvim-lspconfig',
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    ft = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+    config = function()
+      require('typescript-tools').setup({
+        on_attach = function(client, bufnr)
+          require('lsp-keymaps').on_attach(client, bufnr)
+          vim.keymap.set("n", "gd", "<cmd>TSToolsGoToSourceDefinition<CR>", { buffer = bufnr })
+        end,
+      })
+    end,
+  },
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
@@ -150,33 +163,28 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
-    'EdenEast/nightfox.nvim',
+    'rose-pine/neovim',
+    name = 'rose-pine',
     lazy = false,
     priority = 1000,
     config = function()
-      require('nightfox').setup({
-        options = {
-          transparent = false,
-          terminal_colors = true,
-          dim_inactive = false,
-          styles = {
-            comments = "italic",
-            keywords = "bold",
-            types = "italic,bold",
-          },
+      require('rose-pine').setup({
+        styles = {
+          italic = true,
+          bold = true,
         },
       })
-      vim.cmd('colorscheme nightfox')
+      vim.cmd('colorscheme rose-pine')
     end,
   },
   {
     'f-person/auto-dark-mode.nvim',
     opts = {
       set_dark_mode = function()
-        vim.cmd('colorscheme nightfox')
+        vim.cmd('colorscheme rose-pine-main')
       end,
       set_light_mode = function()
-        vim.cmd('colorscheme dayfox')
+        vim.cmd('colorscheme rose-pine-dawn')
       end,
     },
   },

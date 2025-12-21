@@ -1,8 +1,8 @@
-theme = light:TokyoNight Day,dark:TokyoNight
+theme = light:Rose Pine Dawn,dark:Rose Pine
 
 font-size = 17
 font-thicken = false
-font-family = "Fira Code Retina"
+font-family = "FiraCode Nerd Font"
 
 adjust-cell-width="-8%"
 background-opacity = 0.95

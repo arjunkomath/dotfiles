@@ -1,5 +1,5 @@
 if vim.g.neovide then
-  vim.o.guifont = "Berkeley Mono:h17:w-1"
+  vim.o.guifont = "FiraCode Nerd Font:h17:w-1"
 
   vim.g.neovide_opacity = 0.9
   vim.g.neovide_floating_shadow = false
@@ -31,4 +31,9 @@ if vim.g.neovide then
   vim.keymap.set("n", "<C-0>", function()
     vim.g.neovide_scale_factor = 1.0
   end)
+
+  vim.keymap.set('n', '<D-v>', '"+P')
+  vim.keymap.set('v', '<D-v>', '"+P')
+  vim.keymap.set('c', '<D-v>', '<C-R>+')
+  vim.keymap.set('i', '<D-v>', '<C-R>+')
 end
