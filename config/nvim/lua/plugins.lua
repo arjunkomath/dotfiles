@@ -37,6 +37,7 @@ return {
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
       'marilari88/neotest-vitest',
+      'nvim-neotest/neotest-go',
     },
   },
   {
@@ -146,13 +147,40 @@ return {
     },
     build = ':lua require("go.install").update_all_sync()',
     config = function()
-      require('go').setup()
+      require('go').setup({
+        lsp_cfg = {
+          settings = {
+            gopls = {
+              gofumpt = true,
+              staticcheck = true,
+              analyses = {
+                unusedparams = true,
+                shadow = true,
+                nilness = true,
+                unusedwrite = true,
+                useany = true,
+              },
+              hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+              },
+            },
+          },
+        },
+        lsp_on_attach = require('lsp-keymaps').on_attach,
+        lsp_keymaps = false,
+        lsp_inlay_hints = { enable = true },
+      })
 
       local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
       vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = "*.go",
         callback = function()
-          require('go.format').goimport()
+          require('go.format').goimports()
         end,
         group = format_sync_grp,
       })
@@ -163,28 +191,26 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    'catppuccin/nvim',
+    name = 'catppuccin',
     lazy = false,
     priority = 1000,
     config = function()
-      require('rose-pine').setup({
-        styles = {
-          italic = true,
-          bold = true,
-        },
+      require('catppuccin').setup({
+        no_italic = true,
+        no_bold = false,
       })
-      vim.cmd('colorscheme rose-pine')
+      vim.cmd('colorscheme catppuccin')
     end,
   },
   {
     'f-person/auto-dark-mode.nvim',
     opts = {
       set_dark_mode = function()
-        vim.cmd('colorscheme rose-pine-main')
+        vim.cmd('colorscheme catppuccin-mocha')
       end,
       set_light_mode = function()
-        vim.cmd('colorscheme rose-pine-dawn')
+        vim.cmd('colorscheme catppuccin-latte')
       end,
     },
   },
@@ -212,5 +238,15 @@ return {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" }
-  }
+  },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    ft = { 'markdown' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+    keys = {
+      { '<leader>mr', '<cmd>RenderMarkdown toggle<cr>', desc = 'Toggle markdown render' },
+      { '<leader>mp', '<cmd>RenderMarkdown preview<cr>', desc = 'Markdown preview' },
+    },
+    opts = {},
+  },
 }
