@@ -2,9 +2,9 @@ theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 
 font-size = 17
 font-thicken = false
-font-family = "FiraCode Nerd Font"
-
+font-family = "TX-02 Medium"
 adjust-cell-width="-8%"
+
 background-opacity = 0.95
 background-blur-radius = 30
 

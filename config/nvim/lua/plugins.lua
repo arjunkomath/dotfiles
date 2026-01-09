@@ -191,26 +191,24 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
+    'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      require('catppuccin').setup({
-        no_italic = true,
-        no_bold = false,
+      require('tokyonight').setup({
+        style = 'night',
       })
-      vim.cmd('colorscheme catppuccin')
+      vim.cmd('colorscheme tokyonight')
     end,
   },
   {
     'f-person/auto-dark-mode.nvim',
     opts = {
       set_dark_mode = function()
-        vim.cmd('colorscheme catppuccin-mocha')
+        vim.cmd('colorscheme tokyonight-night')
       end,
       set_light_mode = function()
-        vim.cmd('colorscheme catppuccin-latte')
+        vim.cmd('colorscheme tokyonight-day')
       end,
     },
   },
