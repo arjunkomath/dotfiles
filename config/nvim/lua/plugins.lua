@@ -191,24 +191,39 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
-    'folke/tokyonight.nvim',
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+  {
+    "sindrets/diffview.nvim",
+    lazy = true,
+    cmd = { "DiffviewOpen", "DiffviewFileHistory", "DiffviewClose" },
+    keys = {
+      { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diff view" },
+      { "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "File history" },
+      { "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "Branch history" },
+      { "<leader>gc", "<cmd>DiffviewClose<cr>", desc = "Close diff view" },
+    },
+    opts = {},
+  },
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
     lazy = false,
     priority = 1000,
     config = function()
-      require('tokyonight').setup({
-        style = 'night',
-      })
-      vim.cmd('colorscheme tokyonight')
+      vim.cmd('colorscheme catppuccin-mocha')
     end,
   },
   {
     'f-person/auto-dark-mode.nvim',
     opts = {
       set_dark_mode = function()
-        vim.cmd('colorscheme tokyonight-night')
+        vim.cmd('colorscheme catppuccin-mocha')
       end,
       set_light_mode = function()
-        vim.cmd('colorscheme tokyonight-day')
+        vim.cmd('colorscheme catppuccin-latte')
       end,
     },
   },
