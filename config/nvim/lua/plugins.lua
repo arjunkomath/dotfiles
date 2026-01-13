@@ -208,11 +208,44 @@ return {
     opts = {},
   },
   {
+    'sphamba/smear-cursor.nvim',
+    cond = not vim.g.neovide,
+    opts = {},
+  },
+  {
     'catppuccin/nvim',
     name = 'catppuccin',
     lazy = false,
     priority = 1000,
     config = function()
+      require('catppuccin').setup({
+        integrations = {
+          bufferline = true,
+          cmp = true,
+          colorizer = true,
+          diffview = true,
+          dressing = true,
+          gitsigns = true,
+          harpoon = true,
+          indent_blankline = { enabled = true },
+          lualine = true,
+          mason = true,
+          native_lsp = {
+            enabled = true,
+            inlay_hints = { background = true },
+          },
+          neotest = true,
+          notify = true,
+          rainbow_delimiters = true,
+          render_markdown = true,
+          telescope = true,
+          treesitter = true,
+          treesitter_context = true,
+          lsp_trouble = true,
+          which_key = true,
+          zen_mode = true,
+        }
+      })
       vim.cmd('colorscheme catppuccin-mocha')
     end,
   },

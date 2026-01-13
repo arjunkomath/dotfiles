@@ -1,7 +1,7 @@
 if vim.g.neovide then
   vim.o.guifont = "TX-02:h17:w-1.4"
 
-  vim.g.neovide_opacity = 0.9
+  vim.g.neovide_opacity = 1
   vim.g.neovide_floating_shadow = false
   vim.g.neovide_floating_blur_amount_x = 2.0
   vim.g.neovide_floating_blur_amount_y = 2.0
