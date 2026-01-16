@@ -56,7 +56,7 @@ keymap.set({ "n", "v" }, "<leader>f", function()
 end, { desc = "Format file or range (in visual mode)" })
 
 keymap.set('n', '<Space>f', ':Oil<Return>')
-
 keymap.set('n', '<leader>x', ':bdelete<Return>')
-
 keymap.set('n', '<leader>z', ':ZenMode<Return>', { silent = true })
+keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = "Exit terminal mode" })
+keymap.set('n', '<C-`>', ':botright vsplit | terminal<Return>', { desc = "Open terminal in split right" })

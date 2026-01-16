@@ -3,7 +3,9 @@ theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 font-size = 17
 font-thicken = false
 font-family = "TX-02 Medium"
-adjust-cell-width="-8%"
+adjust-cell-width="-10%"
+font-feature = +calt
+font-feature = +ss02
 
 background-opacity = 0.95
 background-blur-radius = 30
