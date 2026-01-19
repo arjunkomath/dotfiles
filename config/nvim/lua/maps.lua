@@ -2,10 +2,6 @@ local keymap = vim.keymap
 
 keymap.set('n', 'x', '"_x')
 
--- Increment/decrement
-keymap.set('n', '+', '<C-a>')
-keymap.set('n', '-', '<C-x>')
-
 -- Save file
 keymap.set('n', '<C-s>', ':w<Return>')
 
@@ -17,46 +13,15 @@ keymap.set('n', 'ss', ':split<Return><C-w>w')
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w')
 
 -- Move window
-keymap.set('n', '<Space>', '<C-w>w')
 keymap.set('', 'sh', '<C-w>h')
 keymap.set('', 'sk', '<C-w>k')
 keymap.set('', 'sj', '<C-w>j')
 keymap.set('', 'sl', '<C-w>l')
 
 -- Move lines
-keymap.set('n', '<A-j>', ':m .+1<CR>==')
-keymap.set('n', '<A-k>', ':m .-2<CR>==')
+keymap.set('n', '<C-j>', ':m .+1<CR>==')
+keymap.set('n', '<C-k>', ':m .-2<CR>==')
 
--- Resize window
-keymap.set('n', '<C-w><left>', '<C-w><')
-keymap.set('n', '<C-w><right>', '<C-w>>')
-keymap.set('n', '<C-w><up>', '<C-w>+')
-keymap.set('n', '<C-w><down>', '<C-w>-')
-
--- Undo tree
-keymap.set('n', '<C-z>', ':UndotreeToggle<Return>')
-
-keymap.set('n', 'tt', ':Trouble diagnostics toggle<Return>')
-keymap.set('n', 'td', ':Trouble diagnostics toggle filter.buf=0<Return>')
-
--- Quick fix
-keymap.set('n', 'qf', ':copen<Return>')
-keymap.set('n', 'qc', ':cclose<Return>')
-
-keymap.set('n', '<Space><Space>', '<cmd>GrugFar<CR>')
-keymap.set('n', '<C-f>', '<cmd>lua require("grug-far").open({ prefills = { paths = vim.fn.expand("%") } })<CR>')
-
--- Format with conform
-keymap.set({ "n", "v" }, "<leader>f", function()
-  require("conform").format({
-    lsp_fallback = true,
-    async = false,
-    timeout_ms = 500,
-  })
-end, { desc = "Format file or range (in visual mode)" })
-
-keymap.set('n', '<Space>f', ':Oil<Return>')
 keymap.set('n', '<leader>x', ':bdelete<Return>')
-keymap.set('n', '<leader>z', ':ZenMode<Return>', { silent = true })
 keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = "Exit terminal mode" })
 keymap.set('n', '<C-`>', ':botright vsplit | terminal<Return>', { desc = "Open terminal in split right" })
