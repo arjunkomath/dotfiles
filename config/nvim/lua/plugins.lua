@@ -120,23 +120,6 @@ return {
     'MagicDuck/grug-far.nvim',
     opts = {},
   },
-  {
-    "kdheepak/lazygit.nvim",
-    lazy = true,
-    cmd = {
-      "LazyGit",
-      "LazyGitConfig",
-      "LazyGitCurrentFile",
-      "LazyGitFilter",
-      "LazyGitFilterCurrentFile",
-    },
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
-    keys = {
-      { "<C-g>", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-    },
-  },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   {
     'ray-x/go.nvim',
@@ -196,18 +179,6 @@ return {
     opts = {},
   },
   {
-    "sindrets/diffview.nvim",
-    lazy = true,
-    cmd = { "DiffviewOpen", "DiffviewFileHistory", "DiffviewClose" },
-    keys = {
-      { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diff view" },
-      { "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "File history" },
-      { "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "Branch history" },
-      { "<leader>gc", "<cmd>DiffviewClose<cr>", desc = "Close diff view" },
-    },
-    opts = {},
-  },
-  {
     'sphamba/smear-cursor.nvim',
     cond = not vim.g.neovide,
     opts = {},
@@ -223,7 +194,6 @@ return {
           bufferline = true,
           cmp = true,
           colorizer = true,
-          diffview = true,
           dressing = true,
           gitsigns = true,
           harpoon = true,

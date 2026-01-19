@@ -36,3 +36,14 @@ git config --global user.signingkey ABCDEF01 # Use key ID copied earlier
 ## LSPs
 
 Install using Mason
+
+## Encrypted content
+
+```sh
+# Encrypt
+openssl enc -aes-256-cbc -salt -pbkdf2 -in input.file -out output.enc
+
+# Decrypt
+openssl enc -aes-256-cbc -d -pbkdf2 -in output.enc -out input.file
+```
+
