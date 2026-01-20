@@ -17,21 +17,12 @@ export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 # Homebrew
-if [[ -z "$HOMEBREW_PREFIX" ]]; then
-  export HOMEBREW_PREFIX="$(brew --prefix)"
-fi
-
-# Zsh Plugins
-[[ -f "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] && \
-    source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-[[ -f "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] && \
-    source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+export HOMEBREW_PREFIX="/opt/homebrew"
 
 # Environment Variables
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
 export BUN_INSTALL="$HOME/.bun"
 export PNPM_HOME="$HOME/Library/pnpm"
-export NVM_DIR="$HOME/.nvm"
 
 # PATH
 export PATH="$JAVA_HOME/bin:$PATH"
@@ -79,55 +70,8 @@ function yy() {
 export FZF_DEFAULT_COMMAND='fd --type f .'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# Lazy Loading
-autoload -U add-zsh-hook
-
-load-nvmrc() {
-  if [[ ! -f "package.json" ]]; then
-    return
-  fi
-
-  if ! command -v nvm &> /dev/null; then
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-  fi
-
-  local node_version="$(nvm version 2>/dev/null)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      echo "Installing Node.js version from .nvmrc..."
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      echo "Switching to Node.js $(cat "${nvmrc_path}")..."
-      nvm use
-    fi
-  elif [[ -f "package.json" ]]; then
-    if [[ "$node_version" == "N/A" || "$node_version" == "none" ]]; then
-      echo "No .nvmrc found, using default Node.js version..."
-      nvm use default 2>/dev/null || nvm use node 2>/dev/null
-    fi
-  fi
-}
-
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
-load-ruby() {
-  if [[ ! -f "Gemfile" ]]; then
-    return
-  fi
-
-  if [[ -d "$HOMEBREW_PREFIX/opt/ruby/bin" ]] && [[ ":$PATH:" != *":$HOMEBREW_PREFIX/opt/ruby/bin:"* ]]; then
-    export PATH="$HOMEBREW_PREFIX/opt/ruby/bin:$(gem environment gemdir)/bin:$PATH"
-  fi
-}
-
-add-zsh-hook chpwd load-ruby
-load-ruby
+# mise
+eval "$(mise activate zsh)"
 
 # Bun Completions
 [[ -s "$BUN_INSTALL/_bun" ]] && source "$BUN_INSTALL/_bun"

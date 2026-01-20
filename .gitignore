@@ -12,3 +12,5 @@ undo
 
 config/nvim/plugged
 config/tmux/plugins
+config/fish/fish_variables
+config/fish/local.fish

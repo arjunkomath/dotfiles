@@ -21,19 +21,17 @@
       path: config/lazygit
     ~/.config/ghostty:
       path: config/ghostty
-    ~/.zshrc:
-      force: true
+    ~/.config/fish:
+      path: config/fish
+    ~/.config/starship.toml:
+      path: config/starship.toml
+    ~/.config/mise/config.toml:
+      path: config/mise/config.toml
     ~/Brewfile:
       if: "[ `uname` = Darwin ]"
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-
-- shell:
-    - [
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)",
-        Installing ohmyzsh,
-      ]
 
 - shell:
     - command:

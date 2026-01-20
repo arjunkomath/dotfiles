@@ -1,6 +1,7 @@
-# Zsh Plugins
-brew "zsh-autosuggestions"
-brew "zsh-syntax-highlighting"
+# Fish Shell
+brew "fish"
+brew "mise"
+brew "starship"
 
 # Neovim
 brew "neovim"
