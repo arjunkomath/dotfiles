@@ -2,6 +2,15 @@
 
 After cloning this repo, run `install` to automatically set up the development environment. Note that the install script is idempotent: it can safely be run multiple times.
 
+## Fish Shell
+
+To set Fish as your default shell:
+
+```sh
+echo $(which fish) | sudo tee -a /etc/shells
+chsh -s $(which fish)
+```
+
 ## Homebrew
 
 - Installed packages by running `brew bundle`
