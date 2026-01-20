@@ -317,6 +317,23 @@ return {
     },
   },
   {
+    'NeogitOrg/neogit',
+    lazy = true,
+    cmd = "Neogit",
+    keys = {
+      { "<C-g>", "<cmd>Neogit<cr>", desc = "Open Neogit" },
+    },
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
+    opts = {
+      integrations = {
+        telescope = true,
+      },
+    },
+  },
+  {
     'folke/zen-mode.nvim',
     lazy = true,
     cmd = "ZenMode",
@@ -516,6 +533,7 @@ return {
             enabled = true,
             inlay_hints = { background = true },
           },
+          neogit = true,
           neotest = true,
           notify = true,
           rainbow_delimiters = true,
