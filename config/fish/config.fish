@@ -24,8 +24,8 @@ fish_add_path $HOME/.amp/bin
 fish_add_path $HOMEBREW_PREFIX/opt/libpq/bin
 
 # Aliases
-alias gpl "git pull origin master"
-alias gph "git push origin master"
+alias gpl "git pull origin (git branch --show-current)"
+alias gph "git push origin (git branch --show-current)"
 alias gpull "git pull origin"
 alias gpush "git push origin"
 alias gs "git status"
