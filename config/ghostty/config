@@ -3,10 +3,11 @@ theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 font-size = 17
 font-thicken = false
 font-family = "TX-02-Variable"
+font-style = "Regular Retina"
 adjust-cell-width="-10%"
 font-feature = +calt
 font-feature = +ss02
-font-variation = wght=500
+font-variation = wght=450
 
 background-opacity = 0.95
 background-blur-radius = 30

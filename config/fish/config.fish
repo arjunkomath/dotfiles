@@ -1,6 +1,5 @@
 # Shell
 set -g fish_greeting
-set -gx TERM xterm-256color
 
 # Editor & Environment
 set -gx EDITOR nvim
@@ -35,6 +34,8 @@ alias gdd "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset 
 alias vim nvim
 alias nv "neovide --fork --frame transparent"
 alias tailscale "/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+alias oc 'opencode'
+alias cc 'claude'
 
 # Functions
 function ff
@@ -64,6 +65,9 @@ starship init fish | source
 fzf --fish | source
 set -gx FZF_DEFAULT_COMMAND 'fd --type f .'
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+
+# OrbStack
+# source ~/.orbstack/shell/init.fish 2>/dev/null; or true
 
 # Local Config
 if test -f ~/.config/fish/local.fish
