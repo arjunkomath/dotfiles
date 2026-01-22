@@ -32,10 +32,11 @@ alias gd "git diff"
 alias gco "git checkout"
 alias gdd "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias vim nvim
-alias nv "neovide --fork --frame transparent"
 alias tailscale "/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias oc 'opencode'
 alias cc 'claude'
+alias lg 'lazygit'
+alias cf 'caffeinate -dims'
 
 # Functions
 function ff
@@ -53,6 +54,10 @@ function yy
         cd -- $cwd
     end
     rm -f -- "$tmp"
+end
+
+function nv
+    /Applications/Neovide.app/Contents/MacOS/neovide --fork --frame transparent $argv
 end
 
 # mise

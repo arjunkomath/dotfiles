@@ -1,5 +1,5 @@
 if vim.g.neovide then
-  vim.o.guifont = "TX-02-Variable:h17:w-1.4:W450"
+  vim.o.guifont = "TX-02-Variable,FiraCode Nerd Font:h17:w-1.4:W450"
 
   vim.g.neovide_opacity = 1
   vim.g.neovide_floating_shadow = false

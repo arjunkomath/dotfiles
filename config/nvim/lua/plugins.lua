@@ -317,6 +317,17 @@ return {
     },
   },
   {
+    'sindrets/diffview.nvim',
+    lazy = true,
+    cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+    keys = {
+      { "<leader>dv", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
+      { "<leader>dh", "<cmd>DiffviewFileHistory %<cr>", desc = "File history" },
+      { "<leader>dc", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
+    },
+    opts = {},
+  },
+  {
     'NeogitOrg/neogit',
     lazy = true,
     cmd = "Neogit",
@@ -326,10 +337,12 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope.nvim',
+      'sindrets/diffview.nvim',
     },
     opts = {
       integrations = {
         telescope = true,
+        diffview = true,
       },
     },
   },
@@ -508,11 +521,6 @@ return {
     opts = {},
   },
   {
-    'sphamba/smear-cursor.nvim',
-    cond = not vim.g.neovide,
-    opts = {},
-  },
-  {
     'catppuccin/nvim',
     name = 'catppuccin',
     lazy = false,
@@ -569,51 +577,20 @@ return {
     },
     config = function()
       local conform = require("conform")
-      local util = require("conform.util")
-
-      local function has_config(configs)
-        local root_dir = vim.fn.getcwd()
-        for _, config in ipairs(configs) do
-          if vim.fn.filereadable(root_dir .. "/" .. config) == 1 then
-            return true
-          end
-        end
-        return false
-      end
-
-      local function get_formatter()
-        if has_config({ "biome.json", "biome.jsonc" }) then
-          return "biome"
-        elseif has_config({ ".oxfmtrc.jsonc" }) then
-          return "oxfmt"
-        end
-        return nil
-      end
 
       conform.setup({
-        formatters = {
-          oxfmt = {
-            command = util.from_node_modules("oxfmt"),
-            args = { "--stdin-filepath", "$FILENAME" },
-            stdin = true,
-          },
-        },
         formatters_by_ft = {
-          javascript = { "biome", "oxfmt", stop_after_first = true },
-          typescript = { "biome", "oxfmt", stop_after_first = true },
-          javascriptreact = { "biome", "oxfmt", stop_after_first = true },
-          typescriptreact = { "biome", "oxfmt", stop_after_first = true },
-          json = { "biome" },
-          jsonc = { "biome" },
-          css = { "biome" },
+          javascript = { "oxfmt", "biome", stop_after_first = true },
+          typescript = { "oxfmt", "biome", stop_after_first = true },
+          javascriptreact = { "oxfmt", "biome", stop_after_first = true },
+          typescriptreact = { "oxfmt", "biome", stop_after_first = true },
+          json = { "oxfmt", "biome", stop_after_first = true },
+          jsonc = { "oxfmt", "biome", stop_after_first = true },
+          css = { "oxfmt", "biome", stop_after_first = true },
         },
         format_on_save = function(bufnr)
           if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
             return
-          end
-          local formatter = get_formatter()
-          if formatter then
-            return { timeout_ms = 500, lsp_fallback = false, formatters = { formatter } }
           end
           return { timeout_ms = 500, lsp_fallback = true }
         end,
@@ -682,7 +659,26 @@ return {
     },
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require("harpoon"):setup()
+      local harpoon = require("harpoon")
+      harpoon:setup({
+        settings = {
+          save_on_toggle = true,
+        },
+      })
+
+      harpoon:extend({
+        UI_CREATE = function(cx)
+          vim.keymap.set("n", "<C-v>", function()
+            harpoon.ui:select_menu_item({ vsplit = true })
+          end, { buffer = cx.bufnr })
+          vim.keymap.set("n", "<C-t>", function()
+            harpoon.ui:select_menu_item({ tabedit = true })
+          end, { buffer = cx.bufnr })
+          vim.keymap.set("n", "<C-x>", function()
+            harpoon.ui:select_menu_item({ split = true })
+          end, { buffer = cx.bufnr })
+        end,
+      })
     end,
   },
   {
