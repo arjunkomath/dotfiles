@@ -35,7 +35,7 @@ alias vim nvim
 alias tailscale "/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 alias oc 'opencode'
 alias cc 'claude'
-alias lg 'lazygit'
+alias lg 'lazygit --use-config-file ~/.config/lazygit/config.yml'
 alias cf 'caffeinate -dims'
 
 # Functions

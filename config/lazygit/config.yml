@@ -18,6 +18,9 @@ gui:
   showCommandLog: false
   showBottomLine: false
   commandLogSize: 8
+  theme:
+    selectedLineBgColor:
+      - reverse
 refresher:
   refreshInterval: 10 # file/submodule refresh interval in seconds
   fetchInterval: 60 # re-fetch interval in seconds
