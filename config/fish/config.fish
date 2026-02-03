@@ -37,6 +37,9 @@ alias oc 'opencode'
 alias cc 'claude'
 alias lg 'lazygit --use-config-file ~/.config/lazygit/config.yml'
 alias cf 'caffeinate -dims'
+alias .. 'cd ..'
+alias ... 'cd ../..'
+alias .... 'cd ../../..'
 
 # Functions
 function ff
@@ -70,6 +73,9 @@ starship init fish | source
 fzf --fish | source
 set -gx FZF_DEFAULT_COMMAND 'fd --type f .'
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+
+# Zoxide
+zoxide init fish --cmd cd | source
 
 # OrbStack
 # source ~/.orbstack/shell/init.fish 2>/dev/null; or true

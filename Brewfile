@@ -11,6 +11,7 @@ brew "tree-sitter"
 
 # CLI Tools
 brew "fzf"
+brew "zoxide"
 brew "wget"
 brew "lazygit"
 brew "gnu-sed"
