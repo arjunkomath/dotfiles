@@ -7,7 +7,7 @@ font-style = "Regular Retina"
 adjust-cell-width="-10%"
 font-feature = +calt
 font-feature = +ss02
-font-variation = wght=450
+font-variation = wght=500
 
 background-opacity = 0.95
 background-blur-radius = 30
@@ -15,7 +15,7 @@ background-blur-radius = 30
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = tabs
 title = 👻
-shell-integration-features = no-title
+shell-integration = none
 mouse-scroll-multiplier = 0.4
 
 keybind = cmd+h=goto_split:left

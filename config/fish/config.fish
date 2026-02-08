@@ -63,19 +63,15 @@ function nv
     /Applications/Neovide.app/Contents/MacOS/neovide --fork --frame transparent $argv
 end
 
-# mise
-mise activate fish | source
-
-# Starship
-starship init fish | source
-
-# FZF
 fzf --fish | source
 set -gx FZF_DEFAULT_COMMAND 'fd --type f .'
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
-# Zoxide
 zoxide init fish --cmd cd | source
+
+fish_add_path $HOME/.local/share/mise/shims
+
+starship init fish | source
 
 # OrbStack
 # source ~/.orbstack/shell/init.fish 2>/dev/null; or true
