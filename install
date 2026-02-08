@@ -2,14 +2,60 @@
 
 set -e
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
+DRY_RUN=false
+if [ "$1" = "--dry-run" ] || [ "$1" = "-n" ]; then
+  DRY_RUN=true
+  echo "=== Dry run mode ==="
+  echo ""
+fi
 
-DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+run() {
+  if [ "$DRY_RUN" = true ]; then
+    echo "[dry run] $*"
+  else
+    "$@"
+  fi
+}
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+run mkdir -p ~/Developer
+run mkdir -p ~/.config
+run mkdir -p ~/.config/mise
+run mkdir -p ~/.ssh
+if [ "$DRY_RUN" = false ]; then
+  chmod 700 ~/.ssh
+fi
+
+link() {
+  local src="$BASEDIR/$1"
+  local dst="$2"
+  if [ -L "$dst" ]; then
+    run rm "$dst"
+  elif [ -e "$dst" ]; then
+    echo "Warning: $dst exists and is not a symlink, skipping"
+    return
+  fi
+  run ln -s "$src" "$dst"
+}
+
+link "config/nvim"            ~/.config/nvim
+link "config/lazygit"         ~/.config/lazygit
+link "config/ghostty"         ~/.config/ghostty
+link "config/fish"            ~/.config/fish
+link "config/starship.toml"   ~/.config/starship.toml
+link "config/mise/config.toml" ~/.config/mise/config.toml
+
+if [ "$(uname)" = "Darwin" ]; then
+  link "Brewfile" ~/Brewfile
+
+  if ! command -v brew &>/dev/null; then
+    echo "Installing Homebrew..."
+    run /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+
+  echo "Running brew bundle..."
+  run brew bundle --file=~/Brewfile
+fi
+
+echo "Done!"
