@@ -20,6 +20,7 @@ fish_add_path $BUN_INSTALL/bin
 fish_add_path $PNPM_HOME
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.amp/bin
+fish_add_path $HOME/.cargo/bin
 fish_add_path $HOMEBREW_PREFIX/opt/libpq/bin
 
 # Aliases
