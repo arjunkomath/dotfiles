@@ -120,33 +120,26 @@ return {
   },
   {
     'nvim-treesitter/nvim-treesitter',
-    event = { "BufReadPost", "BufNewFile" },
-    build = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    lazy = false,
+    build = ':TSUpdate',
     dependencies = {
       'HiPhish/rainbow-delimiters.nvim',
       'JoosepAlviste/nvim-ts-context-commentstring',
     },
     config = function()
-      require('nvim-treesitter.configs').setup {
-        highlight = {
-          enable = true,
-          disable = {},
-        },
-        indent = {
-          enable = true,
-          disable = {},
-        },
-        auto_install = true,
-        sync_install = false,
-      }
+      require('nvim-treesitter').setup()
+
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function()
+          pcall(vim.treesitter.start)
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
 
       require('ts_context_commentstring').setup {
         enable = true,
         enable_autocmd = false,
       }
-
-      local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-      parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }
 
       vim.g.rainbow_delimiters = {
         strategy = {
