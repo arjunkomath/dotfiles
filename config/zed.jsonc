@@ -7,8 +7,8 @@
   "buffer_line_height": "standard",
   "icon_theme": {
     "mode": "system",
-    "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha"
+    "light": "Rosé Pine Dawn",
+    "dark": "Rosé Pine Moon"
   },
   "indent_guides": {
     "enabled": true,
@@ -23,8 +23,8 @@
   "buffer_font_size": 16.0,
   "theme": {
     "mode": "system",
-    "light": "Vercel Light",
-    "dark": "Vercel Dark"
+    "light": "Rosé Pine Dawn",
+    "dark": "Rosé Pine Moon"
   },
   // LSP
   "formatter": "language_server",

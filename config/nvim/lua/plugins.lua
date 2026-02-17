@@ -514,50 +514,38 @@ return {
     opts = {},
   },
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
+    'rose-pine/neovim',
+    name = 'rose-pine',
     lazy = false,
     priority = 1000,
     config = function()
-      require('catppuccin').setup({
-        integrations = {
-          bufferline = true,
-          cmp = true,
-          colorizer = true,
-          dressing = true,
-          gitsigns = true,
-          harpoon = true,
-          indent_blankline = { enabled = true },
-          lualine = true,
-          mason = true,
-          native_lsp = {
-            enabled = true,
-            inlay_hints = { background = true },
-          },
-          neogit = true,
-          neotest = true,
-          notify = true,
-          rainbow_delimiters = true,
-          render_markdown = true,
-          telescope = true,
-          treesitter = true,
-          treesitter_context = true,
-          lsp_trouble = true,
-          which_key = true,
-          zen_mode = true,
-        }
+      require('rose-pine').setup({
+        variant = 'auto',
+        dark_variant = 'moon',
+        dim_inactive_windows = false,
+        extend_background_behind_borders = true,
+        enable = {
+          terminal = true,
+          legacy_highlights = true,
+          migrations = true,
+        },
+        styles = {
+          bold = true,
+          italic = true,
+          transparency = false,
+        },
       })
-      vim.cmd('colorscheme catppuccin-mocha')
+      vim.cmd('colorscheme rose-pine-moon')
     end,
   },
   {
     'f-person/auto-dark-mode.nvim',
     opts = {
       set_dark_mode = function()
-        vim.cmd('colorscheme catppuccin-mocha')
+        vim.cmd('colorscheme rose-pine-moon')
       end,
       set_light_mode = function()
-        vim.cmd('colorscheme catppuccin-latte')
+        vim.cmd('colorscheme rose-pine-dawn')
       end,
     },
   },
