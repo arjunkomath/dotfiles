@@ -1,0 +1,143 @@
+{
+  "editor.accessibilitySupport": "off",
+  "editor.suggestSelection": "first",
+  "editor.guides.bracketPairs": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "search.exclude": {
+    "**/android": true,
+    "**/*.xcworkspace": true,
+    "**/*.xcodeproj": true,
+    "**/dist": true,
+    "**/ios": true,
+    "**/Pods": true
+  },
+  "files.autoSave": "onWindowChange",
+  "git.autofetch": true,
+  "vim.statusBarColors.commandlineinprogress": "",
+  "editor.minimap.enabled": false,
+  "editor.fontSize": 16,
+  "editor.formatOnPaste": true,
+  "editor.inlineSuggest.enabled": true,
+  "git.confirmSync": false,
+  "diffEditor.renderSideBySide": true,
+  "editor.formatOnSave": true,
+  "git.enableSmartCommit": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "yaml": true,
+    "rust": true
+  },
+  "editor.fontFamily": "TX-02-Variable",
+  "editor.fontLigatures": true,
+  "editor.letterSpacing": -0.2,
+  "terminal.integrated.letterSpacing": -0.2,
+  "debug.console.fontSize": 15,
+  "terminal.integrated.fontSize": 16,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "window.confirmBeforeClose": "always",
+  "errorLens.enabledDiagnosticLevels": ["error", "info", "hint"],
+  "errorLens.enabled": true,
+  "window.autoDetectColorScheme": true,
+  "editor.lineNumbers": "relative",
+  "editor.stickyScroll.defaultModel": "foldingProviderModel",
+  "editor.stickyScroll.enabled": true,
+  "vim.leader": ";",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "s", "f"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["g", "c", "r"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    {
+      "before": ["<tab>"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["editor.action.referenceSearch.next"]
+    },
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    {
+      "before": ["s", "v"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["workbench.action.debug.start"]
+    },
+    {
+      "before": ["<leader>", ","],
+      "commands": ["workbench.action.openSettingsJson"]
+    },
+    {
+      "before": ["<leader>", "d", "r"],
+      "commands": ["workbench.action.debug.restart"]
+    },
+    {
+      "before": ["<leader>", "d", "c"],
+      "commands": ["workbench.action.debug.continue"]
+    },
+    {
+      "before": ["<leader>", "d", "s"],
+      "commands": ["workbench.action.debug.stepOver"]
+    },
+    {
+      "before": ["<leader>", "d", "i"],
+      "commands": ["workbench.action.debug.stepInto"]
+    },
+    {
+      "before": ["g", "c", "c"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["s", "l"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["s", "h"],
+      "commands": ["workbench.action.previousEditor"]
+    }
+  ],
+  "zenMode.hideLineNumbers": false,
+  "zenMode.fullScreen": false,
+  "telemetry.telemetryLevel": "crash",
+  "application.shellEnvironmentResolutionTimeout": 60,
+  "git.replaceTagsWhenPull": true,
+  "window.commandCenter": false,
+  "workbench.activityBar.location": "top",
+  "gitlens.views.contributors.showStatistics": true,
+  "workbench.preferredLightColorTheme": "Rosé Pine Dawn (no italics)",
+  "workbench.colorCustomizations": {},
+  "workbench.preferredDarkColorTheme": "Rosé Pine",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "typescript.preferences.organizeImports": {
+    "source.organizeImports.biome": "explicit"
+  },
+  "workbench.statusBar.visible": false,
+  "chat.editor.fontSize": 14,
+  "workbench.panel.defaultLocation": "right",
+  "go.toolsManagement.autoUpdate": true,
+  "claudeCode.preferredLocation": "panel",
+  "workbench.iconTheme": "symbols"
+}
