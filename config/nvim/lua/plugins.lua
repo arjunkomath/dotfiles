@@ -143,7 +143,7 @@ return {
 
       vim.g.rainbow_delimiters = {
         strategy = {
-          [''] = require('rainbow-delimiters').strategy['local'],
+          [''] = require('rainbow-delimiters').strategy['global'],
         },
       }
     end,
