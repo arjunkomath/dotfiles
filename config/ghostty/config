@@ -5,10 +5,10 @@ font-thicken = false
 font-family = "TX-02-Variable"
 font-family = "FiraCode Nerd Font"
 font-style = "Regular Retina"
-adjust-cell-width="-6%"
+adjust-cell-width="-4%"
 font-feature = +calt
 font-feature = +ss02
-font-variation = wght=450
+font-variation = wght=500
 
 background-opacity = 0.95
 background-blur-radius = 30
