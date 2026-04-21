@@ -514,38 +514,23 @@ return {
     opts = {},
   },
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    'projekt0n/github-nvim-theme',
+    name = 'github-theme',
     lazy = false,
     priority = 1000,
     config = function()
-      require('rose-pine').setup({
-        variant = 'auto',
-        dark_variant = 'moon',
-        dim_inactive_windows = false,
-        extend_background_behind_borders = true,
-        enable = {
-          terminal = true,
-          legacy_highlights = true,
-          migrations = true,
-        },
-        styles = {
-          bold = true,
-          italic = false,
-          transparency = false,
-        },
-      })
-      vim.cmd('colorscheme rose-pine-moon')
+      require('github-theme').setup({})
+      vim.cmd('colorscheme github_dark_default')
     end,
   },
   {
     'f-person/auto-dark-mode.nvim',
     opts = {
       set_dark_mode = function()
-        vim.cmd('colorscheme rose-pine-moon')
+        vim.cmd('colorscheme github_dark_default')
       end,
       set_light_mode = function()
-        vim.cmd('colorscheme rose-pine-dawn')
+        vim.cmd('colorscheme github_light')
       end,
     },
   },
