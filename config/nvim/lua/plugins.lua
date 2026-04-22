@@ -35,7 +35,6 @@ return {
     dependencies = {
       'nvim-neotest/nvim-nio',
       'nvim-lua/plenary.nvim',
-      'nvim-treesitter/nvim-treesitter',
       'marilari88/neotest-vitest',
       'nvim-neotest/neotest-go',
     },
@@ -119,34 +118,44 @@ return {
     opts = { default = true },
   },
   {
-    'nvim-treesitter/nvim-treesitter',
+    'romus204/tree-sitter-manager.nvim',
     lazy = false,
-    build = ':TSUpdate',
-    dependencies = {
-      'HiPhish/rainbow-delimiters.nvim',
-      'JoosepAlviste/nvim-ts-context-commentstring',
-    },
+    cmd = 'TSManager',
     config = function()
-      require('nvim-treesitter').setup()
-
-      vim.api.nvim_create_autocmd('FileType', {
-        callback = function()
-          pcall(vim.treesitter.start)
-          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-        end,
+      require('tree-sitter-manager').setup({
+        ensure_installed = {
+          'bash', 'css', 'diff', 'dockerfile', 'fish', 'git_config', 'gitcommit',
+          'gitignore', 'go', 'gomod', 'html', 'javascript', 'json',
+          'markdown', 'markdown_inline', 'prisma', 'proto', 'python', 'ruby',
+          'rust', 'scss', 'sql', 'ssh_config', 'toml', 'tsx', 'typescript', 'yaml',
+        },
+        auto_install = true,
+        highlight = {},
       })
 
-      require('ts_context_commentstring').setup {
-        enable = true,
-        enable_autocmd = false,
-      }
+      vim.treesitter.language.register('bash', 'sh')
+      vim.treesitter.language.register('tsx', 'typescriptreact')
+      vim.treesitter.language.register('ssh_config', 'sshconfig')
+      vim.treesitter.language.register('git_config', 'gitconfig')
 
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function() pcall(vim.treesitter.start) end,
+      })
+    end,
+  },
+  {
+    'HiPhish/rainbow-delimiters.nvim',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function()
       vim.g.rainbow_delimiters = {
-        strategy = {
-          [''] = require('rainbow-delimiters').strategy['global'],
-        },
+        strategy = { [''] = require('rainbow-delimiters').strategy['global'] },
       }
     end,
+  },
+  {
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    lazy = true,
+    opts = { enable_autocmd = false },
   },
   {
     'nvim-telescope/telescope.nvim',
@@ -177,14 +186,6 @@ return {
         },
       }
     end,
-  },
-  {
-    'nvim-treesitter/nvim-treesitter-context',
-    event = { "BufReadPost", "BufNewFile" },
-    opts = {
-      max_lines = 3,
-      multiline_threshold = 1,
-    },
   },
   {
     'stevearc/oil.nvim',
@@ -650,7 +651,7 @@ return {
   {
     'MeanderingProgrammer/render-markdown.nvim',
     ft = { 'markdown' },
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     keys = {
       { '<leader>mr', '<cmd>RenderMarkdown toggle<cr>', desc = 'Toggle markdown render' },
       { '<leader>mp', '<cmd>RenderMarkdown preview<cr>', desc = 'Markdown preview' },

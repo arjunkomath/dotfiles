@@ -8,6 +8,7 @@ brew "neovim"
 brew "fd"
 brew "ripgrep"
 brew "tree-sitter"
+brew "tree-sitter-cli"
 
 # CLI Tools
 brew "fzf"
