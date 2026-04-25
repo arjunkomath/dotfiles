@@ -520,7 +520,24 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require('github-theme').setup({})
+      require('github-theme').setup({
+        options = {
+          modules = {
+            cmp = true,
+            diagnostic = true,
+            gitsigns = true,
+            lsp_trouble = true,
+            lsp_semantic_tokens = true,
+            native_lsp = true,
+            neogit = true,
+            notify = true,
+            telescope = true,
+            treesitter = true,
+            treesitter_context = true,
+            whichkey = true,
+          },
+        },
+      })
       vim.cmd('colorscheme github_dark_default')
     end,
   },
