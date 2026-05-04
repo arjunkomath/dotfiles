@@ -537,6 +537,28 @@ return {
             whichkey = true,
           },
         },
+        groups = {
+          all = {
+            NeotestPassed = { fg = 'git.add' },
+            NeotestFailed = { fg = 'diag.error' },
+            NeotestRunning = { fg = 'diag.warn' },
+            NeotestSkipped = { fg = 'diag.info' },
+            NeotestTest = { fg = 'fg1' },
+            NeotestNamespace = { fg = 'syntax.type' },
+            NeotestFocused = { style = 'bold,underline' },
+            NeotestFile = { fg = 'syntax.func' },
+            NeotestDir = { fg = 'syntax.func' },
+            NeotestBorder = { fg = 'fg3' },
+            NeotestIndent = { fg = 'fg3' },
+            NeotestExpandMarker = { fg = 'fg3' },
+            NeotestAdapterName = { fg = 'palette.magenta' },
+            NeotestWinSelect = { fg = 'diag.info', style = 'bold' },
+            NeotestMarked = { fg = 'syntax.number', style = 'bold' },
+            NeotestTarget = { fg = 'diag.error' },
+            NeotestWatching = { fg = 'diag.warn' },
+            NeotestUnknown = { fg = 'fg3' },
+          },
+        },
       })
       vim.cmd('colorscheme github_dark_default')
     end,
