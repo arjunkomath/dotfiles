@@ -71,8 +71,6 @@ zoxide init fish --cmd cd | source
 
 fish_add_path $HOME/.local/share/mise/shims
 
-starship init fish | source
-
 # OrbStack
 # source ~/.orbstack/shell/init.fish 2>/dev/null; or true
 

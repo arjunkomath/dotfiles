@@ -43,7 +43,6 @@ link "config/nvim"            ~/.config/nvim
 link "config/lazygit"         ~/.config/lazygit
 link "config/ghostty"         ~/.config/ghostty
 link "config/fish"            ~/.config/fish
-link "config/starship.toml"   ~/.config/starship.toml
 link "config/mise/config.toml" ~/.config/mise/config.toml
 
 if [ "$(uname)" = "Darwin" ]; then

@@ -1,7 +1,6 @@
 # Fish Shell
 brew "fish"
 brew "mise"
-brew "starship"
 
 # Neovim
 brew "neovim"
