@@ -21,6 +21,8 @@ fish_add_path $PNPM_HOME
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOMEBREW_PREFIX/opt/libpq/bin
+fish_add_path /opt/homebrew/sbin
+fish_add_path $HOME/.local/share/mise/shims
 
 # Aliases
 alias gpl "git pull origin (git branch --show-current)"
@@ -68,8 +70,6 @@ set -gx FZF_DEFAULT_COMMAND 'fd --type f .'
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
 zoxide init fish --cmd cd | source
-
-fish_add_path $HOME/.local/share/mise/shims
 
 # OrbStack
 # source ~/.orbstack/shell/init.fish 2>/dev/null; or true
